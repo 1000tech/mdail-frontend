@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import './app.stylus'
+import './app.styl'
 
 new Vue({
   el: '#app',
