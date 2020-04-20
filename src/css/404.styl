@@ -1,0 +1,62 @@
+@import "../bower_components/godlike.css/godlike"
+
+@import "components/font/font.styl"
+
+body
+    height: 100%;
+    font-family: "OS", sans-serif;
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1, h2 {
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #B5B5B5;
+    text-shadow: -3px 0 0 rgba(255,0,0,.7), 3px 0 0 rgba(0,255,255,.7);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+    a {
+        border-bottom: 5px solid #B5B5B5;
+        margin-right: 7px;
+        &:hover {
+            color: #808080;
+            border-bottom: 5px solid #808080;
+        }
+        span {
+            letter-spacing: 3px;
+            vertical-align baseline
+        }
+    }
+}
+
+.text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding 0 20px;
+    user-select none
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
