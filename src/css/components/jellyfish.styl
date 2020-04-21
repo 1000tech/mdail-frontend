@@ -1,12 +1,12 @@
 @keyframes swim {
     20% {
-        transform: translateY(3em);
+        transform: translateY(1.5em);
     }
     45% {
-        transform: translateY(-3em);
+        transform: translateY(-1.5em);
     }
     100% {
-        transform: translateY(3em);
+        transform: translateY(1.5em);
     }
 }
 @keyframes squash {
@@ -26,20 +26,20 @@
     }
 }
 .jellyfish
-    font-size: 10px;
-    position: relative;
-    filter: drop-shadow(0 0 1em cyan);
-    height: 14em;
-    animation: swim 10s ease-in-out infinite;
-    transform-origin: 50% 0;
-    transform: translateY(3em);
+    font-size: 5px;
+    position relative
+    filter drop-shadow(0 0 1em cyan)
+    height 14em
+    animation swim 10s ease-in-out infinite;
+    transform-origin 50%
+    transform translateY(1.5em)
     *, :before, :after
         box-sizing content-box
     .arms
-        transform-origin: 50% 0;
-        animation: squash 10s ease-in-out infinite;
+        transform-origin 50% 0
+        animation squash 10s ease-in-out infinite;
 
-.jellyfish .arms .arm {
+.arms .arm {
     position: absolute;
     width: 2em;
     height: 6em;
@@ -52,7 +52,7 @@
     transform: scaleX(var(--scaleX)) scaleY(var(--scaleY)) rotate(calc(var(--rotate) * 1deg));
     animation: wave 10s ease-in-out infinite;
 }
-.jellyfish .arms .arm:before {
+.arms .arm:before {
     content: "";
     position: absolute;
     width: 1.6em;
@@ -65,7 +65,7 @@
     border-bottom: 0.3em solid transparent;
     transform: rotate(-10.4deg);
 }
-.jellyfish .arms .arm:after {
+.arms .arm:after {
     content: "";
     position: absolute;
     width: 1em;
@@ -77,34 +77,34 @@
     border-left: 0.4em solid #ccffff;
     transform: rotate(10deg);
 }
-.jellyfish .arms .arm:nth-child(1) {
+.arms .arm:nth-child(1) {
     left: 2.2em;
 }
-.jellyfish .arms .arm:nth-child(2) {
+.arms .arm:nth-child(2) {
     left: 3em;
 }
-.jellyfish .arms .arm:nth-child(3) {
+.arms .arm:nth-child(3) {
     left: 3.6em;
 }
-.jellyfish .arms .arm:nth-child(4) {
+.arms .arm:nth-child(4) {
     left: 2.3em;
 }
-.jellyfish .arms .arm:nth-child(5) {
+.arms .arm:nth-child(5) {
     left: 3.8em;
 }
-.jellyfish .arms .arm:nth-child(6) {
+.arms .arm:nth-child(6) {
     left: 4.5em;
 }
-.jellyfish .arms .arm:nth-child(7) {
+.arms .arm:nth-child(7) {
     left: 3em;
 }
-.jellyfish .arms .arm:nth-child(8) {
+.arms .arm:nth-child(8) {
     left: 4.5em;
 }
-.jellyfish .tentacles {
+.tentacles {
     animation: squash 10s ease-in-out infinite;
 }
-.jellyfish .tentacles .tentacle {
+.tentacles .tentacle {
     position: absolute;
     top: 4em;
     width: 10em;
@@ -117,19 +117,19 @@
     border-top-left-radius: 20% 50%;
     border-top-right-radius: 20% 50%;
 }
-.jellyfish .tentacles .tentacle:nth-child(2) {
+.tentacles .tentacle:nth-child(2) {
     transform: scaleX(0.8);
 }
-.jellyfish .tentacles .tentacle:nth-child(3) {
+.tentacles .tentacle:nth-child(3) {
     transform: scaleX(0.6);
 }
-.jellyfish .tentacles .tentacle:nth-child(4) {
+.tentacles .tentacle:nth-child(4) {
     transform: scaleX(0.4);
 }
-.jellyfish .tentacles .tentacle:nth-child(5) {
+.tentacles .tentacle:nth-child(5) {
     transform: scaleX(0.2);
 }
-.jellyfish .guts {
+.guts {
     width: 4em;
     height: 4em;
     background: white;
@@ -138,7 +138,7 @@
     top: 1em;
     border-radius: 50%;
 }
-.jellyfish .body {
+.body {
     background: cyan;
     width: 10em;
     height: 5em;
@@ -150,7 +150,7 @@
     transform-origin: 50% 50%;
     animation: squash 10s ease-in-out infinite;
 }
-.jellyfish .body .base {
+.body .base {
     position: absolute;
     width: 3em;
     height: 1.5em;
@@ -160,7 +160,7 @@
     border-bottom-right-radius: 50% 100%;
     box-shadow: 3.5em 0 0 cyan, 7em 0 0 cyan;
 }
-.jellyfish .body .base:after {
+.body .base:after {
     content: "";
     position: absolute;
     width: 3em;
@@ -169,7 +169,7 @@
     top: -0.25em;
     background: radial-gradient(circle at 50% 120%, rgba(0, 255, 255, 0) 0, rgba(0, 255, 255, 0) 25%, cyan 10%, cyan 100%);
 }
-.jellyfish .body .base:before {
+.body .base:before {
     content: "";
     position: absolute;
     width: 3em;
@@ -186,7 +186,7 @@
         transform: translateY(0.2em);
     }
 }
-.jellyfish .eyes .eye {
+.eyes .eye {
     width: 2em;
     height: 2em;
     background: white;
@@ -197,7 +197,7 @@
     overflow: hidden;
     transform: translateZ(0);
 }
-.jellyfish .eyes .eye:before {
+.eyes .eye:before {
     content: "";
     position: absolute;
     width: 70%;
@@ -208,7 +208,7 @@
     top: 15%;
     animation: eyes 10s ease-in-out infinite;
 }
-.jellyfish .eyes .eye:after {
+.eyes .eye:after {
     content: "";
     position: absolute;
     width: 25%;
@@ -221,17 +221,17 @@
     animation: eyes 10s ease-in-out infinite;
     z-index: 1;
 }
-.jellyfish .eyes .eye.right {
+.eyes .eye.right {
     left: 5.15em;
 }
-.jellyfish .eyes .eyelid {
+.eyes .eyelid {
     width: 100%;
     height: 100%;
     background: cyan;
     z-index: 2;
     position: relative;
     transform: translateY(-3em);
-    animation: blink 6s ease-in-out infinite;
+    animation: blink 5s ease-in-out infinite;
 }
 @keyframes blink {
     97% {

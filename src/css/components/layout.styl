@@ -1,18 +1,17 @@
 body
     margin auto
-    background $grey-color
     font 18px 'R', sans-serif
-    max-width $xl
     height 100%
 
 main
     position relative
-    background #fff
-    transition background .3s
-    max-width $xl
     min-height 100%
-    margin auto
     padding 0 0 env(safe-area-inset-bottom)
+    display grid
+    justify-content flex-start
+    grid-template-columns 100px 1fr
+    grid-template-rows 1fr auto
+    grid-template-areas "header aricle";
 
 ::selection
     background $purple
@@ -34,24 +33,3 @@ main
             background #232323
         ::-webkit-scrollbar-thumb // Бегунок
             background #888
-
-.progress
-    position absolute
-    top $header-height
-    left 0
-    z-index 4
-    height 5px
-    max-width 100%
-    background $gradient
-
-figure
-    text-align center
-
-figcaption
-    background $gradient
-    font 600 16px/32px 'R'
-    display inline-block
-    border-radius 20px
-    margin 10px 0 0
-    padding 0 20px
-    color #fff

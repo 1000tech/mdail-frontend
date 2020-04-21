@@ -13,7 +13,9 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^3.5.2",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
+    "path": "^0.12.7",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.7",

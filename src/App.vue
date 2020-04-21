@@ -1,10 +1,10 @@
 <template lang="pug">
 
     main
-        header(role='banner')#header
+        header(role='banner')
             include pug/jellyfish
         article
-            h1 Hello world! {{ test }}
+            h1 Hello {{ test }}
 
 </template>
 
@@ -12,7 +12,7 @@
     export default {
         data() {
             return {
-                test: 'Пиписька'
+                test: 'Хуй!'
             }
         },
         mounted() {

@@ -1,17 +1,9 @@
-@keyframes cd-slide-in {
-    0% {
-        transform: translateY(-100%);
+@keyframes hue {
+    from {
+        filter: hue-rotate(0deg);
     }
-    100% {
-        transform: translateY(0);
-    }
-}
 
-@keyframes cd-3d-rotation {
-    0% {
-        transform: perspective(1000px) rotateX(-90deg);
-    }
-    100% {
-        transform: perspective(1000px) translateY(0);
+    to {
+        filter: hue-rotate(-360deg);
     }
 }
