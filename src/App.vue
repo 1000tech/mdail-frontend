@@ -4,7 +4,9 @@
         header(role='banner')
             include pug/jellyfish
         article
-            h1 Hello {{ test }}
+            h1
+                i.select
+                span Hello {{ test }}
 
 </template>
 

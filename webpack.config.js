@@ -1,8 +1,8 @@
 const
     webpack = require('webpack'),
-    path = require('path'),
     { VueLoaderPlugin } = require('vue-loader'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    IconFontPlugin = require('icon-font-loader').Plugin;
 
 module.exports = {
     mode: 'development',
@@ -15,15 +15,6 @@ module.exports = {
             poll: true
         }
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true
-        })
-    ],
     module: {
         rules: [
             {
@@ -37,20 +28,22 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'vue-style-loader',
-                    'css-loader'
+                    'style-loader',
+                    'css-loader',
+                    'icon-font-loader'
                 ]
             },
             {
                 test: /\.styl(us)?$/,
                 use: [
                     'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'stylus-loader'
                 ]
             },
             {
-                test: /\.(ttf|woff|woff2)$/,
+                test: /\.(svg|ttf|woff|woff2)$/,
                 use: [
                     {
                         loader: 'file-loader?name=/assets/fonts/[name].[ext]'
@@ -58,5 +51,15 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new IconFontPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true
+        })
+    ]
 };
