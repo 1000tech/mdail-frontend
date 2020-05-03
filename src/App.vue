@@ -1,21 +1,20 @@
 <template lang="pug">
-
     main
-        header(role='banner')
-            include pug/jellyfish
-        article
-            h1
-                i.select
-                span Hello {{ test }}
-
+        Header
+        Article
 </template>
 
+<style lang="stylus">
+
+</style>
+
 <script>
+    import Header from './header.vue'
+    import Article from './article.vue'
     export default {
-        data() {
-            return {
-                test: 'Хуй!'
-            }
+        components: {
+            Header,
+            Article
         },
         mounted() {
             console.log('App mounted');

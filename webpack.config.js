@@ -7,7 +7,7 @@ const
 module.exports = {
     mode: 'development',
     entry: [
-        './src/app.js'
+        './index.js'
     ],
     devServer: {
         hot: true,
@@ -37,9 +37,14 @@ module.exports = {
                 test: /\.styl(us)?$/,
                 use: [
                     'vue-style-loader',
-                    'style-loader',
                     'css-loader',
-                    'stylus-loader'
+                    'icon-font-loader',
+                    {
+                        loader: 'stylus-loader',
+                        options: {
+                            indentedSyntax: true
+                        }
+                    }
                 ]
             },
             {
