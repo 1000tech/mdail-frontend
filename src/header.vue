@@ -4,7 +4,6 @@
 </template>
 
 <style lang="stylus">
-    @import "./css/vars"
     header
         grid-area header
         grid-row 1/2

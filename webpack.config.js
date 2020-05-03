@@ -1,5 +1,5 @@
 const
-    webpack = require('webpack'),
+    Webpack = require('webpack'),
     { VueLoaderPlugin } = require('vue-loader'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     IconFontPlugin = require('icon-font-loader').Plugin;
@@ -59,12 +59,19 @@ module.exports = {
     },
     plugins: [
         new IconFontPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        new Webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
             inject: true
+        }),
+        new Webpack.LoaderOptionsPlugin({
+            options: {
+                stylus: {
+                    import: '../src/css/vars.styl'
+                }
+            }
         })
     ]
 };
