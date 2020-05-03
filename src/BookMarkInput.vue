@@ -1,5 +1,5 @@
 <template lang="pug">
-    input.input(
+    input.add-bookmark(
         type='text'
         :value='value'
         v-on='listeners'
@@ -28,7 +28,12 @@
 </script>
 
 <style lang="stylus">
-    .input
+    .add-bookmark
+        margin 16px 0
         padding 8px 10px
-        border 1px solid
+        border 1px solid $grey-color
+        border-radius 4px
+        transition border-color $time
+        &:hover, &:focus
+            border-color $black-color
 </style>

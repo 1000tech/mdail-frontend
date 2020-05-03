@@ -54,7 +54,8 @@
         }
     }
     .jellyfish
-        font-size: 5px;
+        font-size 5px
+        margin 0 0 16px
         position relative
         filter drop-shadow(0 0 1em cyan)
         height 14em

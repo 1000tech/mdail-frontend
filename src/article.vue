@@ -1,11 +1,11 @@
 <template lang="pug">
     article
         h1
-            i.i-select
-            span Закладки
+            i.i-bookmark
+            span Bookmarks
         BookMarkInput(
             v-model='newTodoText'
-            placeholder='New todo'
+            placeholder='Add new Bookmark'
             @keydown.enter='addTodo'
         )
         ul(v-if='todos.length')
@@ -15,7 +15,7 @@
                 @remove='removeTodo'
             )
         p(v-else='')
-            | У тебя нет закладок, еблан
+            | You don't have any Bookmarks
 </template>
 
 <style lang="stylus">
@@ -23,6 +23,18 @@
         grid-area article
         grid-row 1/2
         grid-column 2/2
+        background #fff
+        padding 22px 32px
+        border-radius 8px 0 0 8px
+        box-shadow 0 2px 16px 0 rgba(0,0,0,.2)
+        h1
+            display flex
+            align-content center
+            i
+                font-size 28px
+                margin 0 15px 0 0
+            span
+                font-size 30px
 </style>
 
 <script>
@@ -41,15 +53,15 @@
                 todos: [
                     {
                         id: nextTodoId++,
-                        text: 'Закладка 1'
+                        text: 'Bookmark 1'
                     },
                     {
                         id: nextTodoId++,
-                        text: 'Закладка 2'
+                        text: 'Bookmark 2'
                     },
                     {
                         id: nextTodoId++,
-                        text: 'Закладка 3'
+                        text: 'Bookmark 3'
                     }
                 ]
             }

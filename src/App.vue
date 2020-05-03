@@ -14,6 +14,7 @@
         grid-template-columns 100px 1fr
         grid-template-rows 1fr auto
         grid-template-areas "header aricle"
+        background $blue
 </style>
 
 <script>
