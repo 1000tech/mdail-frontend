@@ -12,7 +12,7 @@
         grid-area header
         grid-row 1/2
         grid-column 1/2
-        padding 10px 0
+        padding 15px 0
         margin 0 auto
         a
             color #fff

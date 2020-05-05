@@ -24,7 +24,7 @@
         grid-row 1/2
         grid-column 2/2
         background #fff
-        padding 22px 32px
+        padding 25px 32px
         border-radius 8px 0 0 8px
         box-shadow 0 2px 16px 0 rgba(0,0,0,.2)
         h1
