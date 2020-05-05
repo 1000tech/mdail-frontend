@@ -12,13 +12,15 @@
         grid-area header
         grid-row 1/2
         grid-column 1/2
-        padding 10px 25px
+        padding 10px 0
+        margin 0 auto
         a
             color #fff
             border-radius 50%
-            width 50px
-            height 50px
-            font-size 20px
+            width 55px
+            height 55px
+            font-size 22px
+            margin 5px 0
             display flex
             align-content center
             justify-content center
