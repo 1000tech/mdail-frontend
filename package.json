@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "godlike.css": "^3.7.2"
+  },
   "devDependencies": {
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
