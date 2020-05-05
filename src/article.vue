@@ -3,13 +3,13 @@
         h1
             i.i-bookmark
             span Bookmarks
-        BookMarkInput(
+        bookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
             @keydown.enter='addTodo'
         )
         ul(v-if='todos.length')
-            BookMarkList(
+            bookMarkList(
                 v-for='todo in todos'
                 :key='todo.id' :todo='todo'
                 @remove='removeTodo'
@@ -38,14 +38,14 @@
 </style>
 
 <script>
-    import BookMarkInput from './BookMarkInput.vue'
-    import BookMarkList from './BookMarkList.vue'
+    import bookMarkInput from './bookMarkInput.vue'
+    import bookMarkList from './bookMarkList.vue'
 
     let nextTodoId = 1
 
     export default {
         components: {
-            BookMarkInput, BookMarkList
+            bookMarkInput, bookMarkList
         },
         data () {
             return {
