@@ -4,7 +4,7 @@
         a(href="#")
             i.i-bookmark
         a(href="#")
-            i.i-search
+            i(class='i-search TranslateX(2px)')
 </template>
 
 <style lang="stylus">
