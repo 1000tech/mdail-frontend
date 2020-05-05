@@ -18,8 +18,8 @@
 </style>
 
 <script>
-    import Header from './header.vue'
-    import Article from './article.vue'
+    import Header from './Header.vue'
+    import Article from './Article.vue'
     export default {
         components: {
             Header,

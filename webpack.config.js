@@ -7,7 +7,7 @@ const
 module.exports = {
     mode: 'development',
     entry: [
-        './index.js'
+        './src/main.js'
     ],
     devServer: {
         hot: true,

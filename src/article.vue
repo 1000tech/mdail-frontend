@@ -38,8 +38,8 @@
 </style>
 
 <script>
-    import BookMarkInput from './bookMarkInput.vue'
-    import BookMarkList from './bookMarkList.vue'
+    import BookMarkInput from './BookMarkInput.vue'
+    import BookMarkList from './BookMarkList.vue'
 
     let nextTodoId = 1
 

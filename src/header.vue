@@ -27,7 +27,7 @@
 </style>
 
 <script>
-    import Logo from './logo.vue'
+    import Logo from './Logo.vue'
     export default {
         components: {
             Logo
