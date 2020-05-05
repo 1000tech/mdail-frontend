@@ -8,6 +8,8 @@
     main
         position relative
         min-height 100%
+        max-width 1500px
+        margin auto
         padding 0 0 env(safe-area-inset-bottom)
         display grid
         justify-content flex-start

@@ -31,9 +31,10 @@
     .add-bookmark
         margin 16px 0
         padding 8px 10px
-        border 1px solid $grey-color
-        border-radius 4px
         transition border-color $time
+        border 1px solid $grey
+        background $grey
+        border-radius 4px
         &:hover, &:focus
-            border-color $black-color
+            border-color $night-grey
 </style>
