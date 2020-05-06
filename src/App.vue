@@ -1,7 +1,7 @@
 <template lang="pug">
     main
         Header
-        Article
+        router-view
 </template>
 
 <style lang="stylus">

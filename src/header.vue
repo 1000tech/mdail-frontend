@@ -2,14 +2,14 @@
     header(role='banner')
         div
             Logo
-            a(href="#")
+            router-link(to="/")
                 i.i-bookmark
             a(href="#")
                 i.i-add
         div
             button
                 i.i-night
-            a(href="#" class="Mt(16px) D(f) Ai(c)")
+            router-link(to="/account" class="Mt(16px) D(f) Ai(c)")
                 .user-avatar
         // a(href="#")
             i(class='i-search TranslateX(2px)')
