@@ -7,8 +7,10 @@
             a(href="#")
                 i.i-add
         div
-            a(href="#")
+            button
                 i.i-night
+            a(href="#" class="Mt(16px) D(f) Ai(c)")
+                .user-avatar
         // a(href="#")
             i(class='i-search TranslateX(2px)')
 
@@ -25,18 +27,23 @@
         display flex
         flex-direction column
         justify-content space-between
-        a
+        a, button
             color #fff
             border-radius 50%
-            width 54px
-            height 54px
+            width 52px
+            height 52px
             font-size 22px
-            margin 5px 0
+            margin 6px 0
             display flex
             align-content center
             justify-content center
             &:hover
                 background $purple
+    .user-avatar
+        width 42px
+        height 42px
+        border-radius 50%
+        background $grey
 </style>
 
 <script>
