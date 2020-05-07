@@ -4,7 +4,7 @@
             Logo
             router-link(to="/")
                 i.i-bookmark
-            a(href="#")
+            button
                 i.i-add
         div
             button
@@ -13,7 +13,6 @@
                 .user-avatar
         // a(href="#")
             i(class='i-search TranslateX(2px)')
-
 
 </template>
 
@@ -37,7 +36,7 @@
             display flex
             align-content center
             justify-content center
-            &:hover
+            &:hover, &.active
                 background $purple
     .user-avatar
         width 42px
@@ -51,6 +50,6 @@
     export default {
         components: {
             Logo
-        }
+        },
     }
 </script>

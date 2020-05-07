@@ -3,6 +3,9 @@
         h1
             i.i-bookmark
             span Bookmarks
+        button(@click="showModal")
+            | jgfshsfh
+        Modal(v-show="isModalVisible" @close="closeModal")
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
@@ -30,25 +33,27 @@
         h1
             display flex
             align-content center
+            font-size 30px
             i
                 font-size 28px
                 margin 0 15px 0 0
-            span
-                font-size 30px
 </style>
 
 <script>
     import BookMarkInput from './BookMarkInput.vue'
     import BookMarkList from './BookMarkList.vue'
+    import Modal from './ModalNew.vue'
 
     let nextTodoId = 1
 
     export default {
         components: {
-            BookMarkInput, BookMarkList
+            BookMarkInput, BookMarkList, Modal
         },
         data () {
             return {
+                isModalVisible: false,
+
                 newTodoText: '',
                 todos: [
                     {
@@ -67,6 +72,15 @@
             }
         },
         methods: {
+            // Modal
+            showModal() {
+                this.isModalVisible = true;
+            },
+            closeModal() {
+                this.isModalVisible = false;
+            },
+
+            // List
             addTodo () {
                 const trimmedText = this.newTodoText.trim()
                 if (trimmedText) {

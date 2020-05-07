@@ -74,7 +74,10 @@ module.exports = {
         new Webpack.LoaderOptionsPlugin({
             options: {
                 stylus: {
-                    import: '../src/css/vars.styl'
+                    import: [
+                        '../src/css/vars.styl',
+                        '../src/css/func.styl'
+                    ]
                 }
             }
         })

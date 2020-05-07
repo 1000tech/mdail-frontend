@@ -11,10 +11,13 @@ const routes = [
   { path: '/account', component: require('./Account.vue').default }
 ];
 
-// Создаём экземпляр маршрутизатора и передаём маршруты в опции `routes`
+// Создаём маршрутизатор
 const router = new VueRouter({
-  mode: 'history', // включаем History API
-  routes // сокращённая запись для `routes: routes`
+  mode: 'history', // History API
+  //path: '*', component: NotFoundComponent, // 404
+  routes, // сокращение `routes: routes`
+  linkActiveClass: "",
+  linkExactActiveClass: "active",
 })
 
 new Vue({
