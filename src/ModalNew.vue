@@ -8,7 +8,7 @@
                 button(
                     type="button"
                     aria-label="Close modal"
-                    @click="close")
+                    @click="$emit('remove', todo.id)")
                     | Закрой меня
 
 </template>

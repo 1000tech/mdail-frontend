@@ -1,11 +1,8 @@
-<template>
-    <li>
-        {{ todo.text }}
-        <button @click="$emit('remove', todo.id)">
-            X
-        </button>
-<!--        <button v-on:click="onGoClick()">go</button>-->
-    </li>
+<template lang="pug">
+    li
+        span {{ todo.text }}
+        button(@click="$emit('remove', todo.id)")
+            | X
 </template>
 
 <script>
@@ -16,10 +13,5 @@
                 required: true
             }
         },
-        // methods: {
-        //     onGoClick: function() {
-        //         this.$router.push({ path:'foo' });
-        //     }
-        // }
     }
 </script>

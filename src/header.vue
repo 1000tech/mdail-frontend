@@ -4,15 +4,16 @@
             Logo
             router-link(to="/")
                 i.i-bookmark
-            button
+            // button
                 i.i-add
+            a(href="#")
+                i(class='i-search TranslateX(2px)')
         div
             button
                 i.i-night
             router-link(to="/account" class="Mt(16px) D(f) Ai(c)")
                 .user-avatar
-        // a(href="#")
-            i(class='i-search TranslateX(2px)')
+
 
 </template>
 

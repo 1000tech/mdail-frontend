@@ -4,8 +4,8 @@
             i.i-bookmark
             span Bookmarks
         button(@click="showModal")
-            | jgfshsfh
-        Modal(v-show="isModalVisible" @close="closeModal")
+            | Окно
+        Modal(v-if="isModalVisible" @close="closeModal")
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
