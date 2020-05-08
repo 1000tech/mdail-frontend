@@ -9,6 +9,11 @@
             Modal(
                 v-if="isModalVisible"
                 @close="closeModal")
+            ModalDelete(
+                :id="deleteItemId"
+                v-if="isModalDeleteVisible"
+                @close="isModalDeleteVisible = false"
+                @confirm="removeTodo")
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
@@ -18,7 +23,7 @@
             BookMarkList(
                 v-for='todo in todos'
                 :key='todo.id' :todo='todo'
-                @remove='removeTodo'
+                @remove='showDeleteModal(todo.id)'
             )
         p(v-else='')
             | You don't have any Bookmarks
@@ -46,16 +51,19 @@
     import BookMarkInput from './BookMarkInput.vue'
     import BookMarkList from './BookMarkList.vue'
     import Modal from './ModalNew.vue'
+    import ModalDelete from './ModalBookmarkDelete.vue'
 
     let nextTodoId = 1
 
     export default {
         components: {
-            BookMarkInput, BookMarkList, Modal
+            BookMarkInput, BookMarkList, Modal, ModalDelete
         },
         data () {
             return {
                 isModalVisible: false,
+                isModalDeleteVisible: false,
+                deleteItemId: null,
 
                 newTodoText: '',
                 todos: [
@@ -83,6 +91,11 @@
                 this.isModalVisible = false;
             },
 
+            showDeleteModal(id) {
+                this.deleteItemId = id;
+                this.isModalDeleteVisible = true;
+            },
+
             // List
             addTodo () {
                 const trimmedText = this.newTodoText.trim()
@@ -98,6 +111,8 @@
                 this.todos = this.todos.filter(todo => {
                     return todo.id !== idToRemove
                 })
+
+                this.isModalDeleteVisible = false
             }
         }
     }
