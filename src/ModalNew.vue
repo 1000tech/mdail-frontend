@@ -1,19 +1,19 @@
 <template lang="pug">
-    transition(name="modal-fade")
-        .modal
-            .modal-backdrop(
-                @click="close")
-            .modal-content(
-                role="dialog")
-                button(
-                    type="button"
-                    aria-label="Close modal"
-                    @click="$emit('remove', todo.id)")
-                    | Закрой меня
+    .modal
+        .modal-backdrop(@click="close")
+        .modal-content
+            button(
+                type="button")
+                | Закрой меня
 
 </template>
 
 <style lang="stylus">
+    .modal-enter-active, .modal-leave-active
+        transition opacity $time
+    .modal-enter, .modal-leave-to
+        opacity 0
+        transition opacity $time
     .modal
         extend()
         position fixed

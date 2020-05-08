@@ -5,7 +5,10 @@
             span Bookmarks
         button(@click="showModal")
             | Окно
-        Modal(v-if="isModalVisible" @close="closeModal")
+        transition(name="modal")
+            Modal(
+                v-if="isModalVisible"
+                @close="closeModal")
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'

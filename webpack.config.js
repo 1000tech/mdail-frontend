@@ -2,6 +2,7 @@ const
     Webpack = require('webpack'),
     { VueLoaderPlugin } = require('vue-loader'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
+    path = require('path'),
     IconFontPlugin = require('icon-font-loader').Plugin;
 
 module.exports = {
@@ -13,6 +14,12 @@ module.exports = {
         hot: true,
         watchOptions: {
             poll: true
+        }
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            '@': path.resolve('src'),
         }
     },
     module: {
