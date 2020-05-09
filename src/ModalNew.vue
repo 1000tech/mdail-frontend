@@ -9,30 +9,7 @@
 </template>
 
 <style lang="stylus">
-    .modal-enter-active, .modal-leave-active
-        transition opacity $time
-    .modal-enter, .modal-leave-to
-        opacity 0
-        transition opacity $time
-    .modal
-        extend()
-        position fixed
-        display flex
-        align-items center
-        justify-content center
-    .modal-backdrop
-        extend()
-        z-index 2
-        background rgba(0, 0, 0, 0.3)
-    .modal-content
-        position relative
-        z-index 3
-        background #fff
-        box-shadow 2px 2px 20px 1px
-        padding 32px
-        overflow-x auto
-        display flex
-        flex-direction column
+
 </style>
 
 <script>

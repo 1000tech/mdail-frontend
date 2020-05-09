@@ -5,15 +5,6 @@
             span Bookmarks
         button(@click="showModal")
             | Окно
-        transition(name="modal")
-            Modal(
-                v-if="isModalVisible"
-                @close="closeModal")
-            ModalDelete(
-                :id="deleteItemId"
-                v-if="isModalDeleteVisible"
-                @close="isModalDeleteVisible = false"
-                @confirm="removeTodo")
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
@@ -26,7 +17,16 @@
                 @remove='showDeleteModal(todo.id)'
             )
         p(v-else='')
-            | You don't have any Bookmarks
+            | Add your first Bookmark
+        transition(name="modal")
+            Modal(
+                v-if="isModalVisible"
+                @close="isModalVisible = false")
+            ModalDelete(
+                :id="deleteItemId"
+                v-if="isModalDeleteVisible"
+                @close="isModalDeleteVisible = false"
+                @confirm="removeTodo")
 </template>
 
 <style lang="stylus">
@@ -37,7 +37,7 @@
         background #fff
         padding 25px 32px
         border-radius 8px 0 0 8px
-        box-shadow 0 2px 16px 0 rgba(0,0,0,.2)
+        box-shadow 0 2px 16px 0 $shadow
         h1
             display flex
             align-content center
@@ -87,9 +87,6 @@
             showModal() {
                 this.isModalVisible = true;
             },
-            closeModal() {
-                this.isModalVisible = false;
-            },
 
             showDeleteModal(id) {
                 this.deleteItemId = id;
@@ -111,7 +108,6 @@
                 this.todos = this.todos.filter(todo => {
                     return todo.id !== idToRemove
                 })
-
                 this.isModalDeleteVisible = false
             }
         }

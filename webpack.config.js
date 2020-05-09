@@ -1,8 +1,9 @@
 const
-    Webpack = require('webpack'),
+    webpack = require('webpack'),
+    path = require('path'),
+    autoprefixer = require('autoprefixer'),
     { VueLoaderPlugin } = require('vue-loader'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    path = require('path'),
     IconFontPlugin = require('icon-font-loader').Plugin;
 
 module.exports = {
@@ -52,6 +53,20 @@ module.exports = {
                     'css-loader',
                     'icon-font-loader',
                     {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer({
+                                    overrideBrowserslist:[
+                                        '> 5%',
+                                        'last 4 versions',
+                                    ]
+                                })
+                            ],
+                            // sourceMap: true
+                        }
+                    },
+                    {
                         loader: 'stylus-loader',
                         options: {
                             indentedSyntax: true
@@ -71,14 +86,14 @@ module.exports = {
     },
     plugins: [
         new IconFontPlugin(),
-        new Webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
             inject: true
         }),
-        new Webpack.LoaderOptionsPlugin({
+        new webpack.LoaderOptionsPlugin({
             options: {
                 stylus: {
                     import: [
