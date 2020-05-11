@@ -2,8 +2,8 @@
     .modal
         .modal-backdrop(@click="$emit('close')")
         .modal-content
-            button(
-                type="button" @click="$emit('confirm', id)")
+            // Генерируем событие, возможно с передаваемыми данными
+            button(type="button" @click="$emit('confirm', id)")
                 | Удалить на хуй
 
 </template>

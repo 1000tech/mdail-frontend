@@ -1,7 +1,8 @@
 <template lang="pug">
     main
         Header
-        router-view
+        transition(name="modal" )
+            router-view
 </template>
 
 <style lang="stylus">

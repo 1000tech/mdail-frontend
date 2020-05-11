@@ -3,8 +3,6 @@
         h1
             i.i-bookmark
             span Bookmarks
-        button(@click="showModal")
-            | Окно
         BookMarkInput(
             v-model='newTodoText'
             placeholder='Add new Bookmark'
@@ -19,9 +17,6 @@
         p(v-else='')
             | Add your first Bookmark
         transition(name="modal")
-            Modal(
-                v-if="isModalVisible"
-                @close="isModalVisible = false")
             ModalDelete(
                 :id="deleteItemId"
                 v-if="isModalDeleteVisible"
@@ -50,18 +45,18 @@
 <script>
     import BookMarkInput from './BookMarkInput.vue'
     import BookMarkList from './BookMarkList.vue'
-    import Modal from './ModalNew.vue'
     import ModalDelete from './ModalBookmarkDelete.vue'
 
     let nextTodoId = 1
 
     export default {
         components: {
-            BookMarkInput, BookMarkList, Modal, ModalDelete
+            BookMarkInput,
+            BookMarkList,
+            ModalDelete
         },
         data () {
             return {
-                isModalVisible: false,
                 isModalDeleteVisible: false,
                 deleteItemId: null,
 
@@ -84,17 +79,13 @@
         },
         methods: {
             // Modal
-            showModal() {
-                this.isModalVisible = true;
-            },
-
             showDeleteModal(id) {
                 this.deleteItemId = id;
                 this.isModalDeleteVisible = true;
             },
 
             // List
-            addTodo () {
+            addTodo() {
                 const trimmedText = this.newTodoText.trim()
                 if (trimmedText) {
                     this.todos.push({
@@ -104,10 +95,11 @@
                     this.newTodoText = ''
                 }
             },
-            removeTodo (idToRemove) {
-                this.todos = this.todos.filter(todo => {
-                    return todo.id !== idToRemove
-                })
+            removeTodo(idToRemove) {
+                // this.todos = this.todos.filter(todo => {
+                //     return todo.id !== idToRemove
+                // })
+                this.todos = this.todos.filter(todo => todo.id !== idToRemove)
                 this.isModalDeleteVisible = false
             }
         }
