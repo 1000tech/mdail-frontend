@@ -1,7 +1,7 @@
 <template lang="pug">
     main
         Header
-        transition(name="modal" )
+        transition
             router-view
 </template>
 

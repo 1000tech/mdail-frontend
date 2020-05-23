@@ -4,9 +4,9 @@
             Logo
             router-link(to="/")
                 i.i-bookmark
-            // button
+            button
                 i.i-add
-            a(href="#")
+            // a(href="#")
                 i(class='i-search TranslateX(2px)')
         div
             button

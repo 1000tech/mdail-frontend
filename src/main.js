@@ -7,8 +7,14 @@ Vue.use(VueRouter);
 
 // Определяем компоненты для маршрутов
 const routes = [
-  { path: '/', component: require('./Article.vue').default },
-  { path: '/account', component: require('./Account.vue').default }
+  {
+    path: '/',
+    component: require('./Article.vue').default
+  },
+  {
+    path: '/account',
+    component: require('./Account.vue').default
+  }
 ];
 
 // Создаём маршрутизатор
@@ -23,5 +29,5 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  render: h => h(App)
+  render: h => h(App),
 });
