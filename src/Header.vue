@@ -14,7 +14,6 @@
             router-link(to="/account" class="Mt(16px) D(f) Ai(c)")
                 .user-avatar
 
-
 </template>
 
 <style lang="stylus">

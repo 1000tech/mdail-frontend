@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
     article
         h1
             i.i-bookmark
@@ -24,7 +24,7 @@
                 @confirm="removeTodo")
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     article
         grid-area article
         grid-row 1/2
