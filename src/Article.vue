@@ -1,45 +1,50 @@
 <template lang='pug'>
     article
-        h1
-            i.i-bookmark
-            span Bookmarks
-        BookMarkInput(
-            v-model='newTodoText'
-            placeholder='Add new Bookmark'
-            @keydown.enter='addTodo'
-        )
-        ul(v-if='todos.length')
-            BookMarkList(
-                v-for='todo in todos'
-                :key='todo.id' :todo='todo'
-                @remove='showDeleteModal(todo.id)'
+        section
+            h1
+                i.i-bookmark
+                span Bookmarks
+            BookMarkInput(
+                v-model='newTodoText'
+                placeholder='Add new Bookmark'
+                @keydown.enter='addTodo'
             )
-        p(v-else='')
-            | Add your first Bookmark
-        transition(name="modal")
-            ModalDelete(
-                :id="deleteItemId"
-                v-if="isModalDeleteVisible"
-                @close="isModalDeleteVisible = false"
-                @confirm="removeTodo")
+            ul(v-if='todos.length')
+                BookMarkList(
+                    v-for='todo in todos'
+                    :key='todo.id' :todo='todo'
+                    @remove='showDeleteModal(todo.id)'
+                )
+            p(v-else='')
+                | Add your first Bookmark
+            transition(name="modal")
+                ModalDelete(
+                    :id="deleteItemId"
+                    v-if="isModalDeleteVisible"
+                    @close="isModalDeleteVisible = false"
+                    @confirm="removeTodo")
 </template>
 
 <style lang='stylus'>
     article
-        grid-area article
-        grid-row 1/2
-        grid-column 2/2
-        background #fff
-        padding 25px 32px
-        border-radius 8px 0 0 8px
-        box-shadow 0 2px 16px 0 $shadow
+        background $white
+        border-radius 10px 10px 0 0
+        padding 0 15px 15px
+        @media (min-width $md)
+            border-radius 10px 0 0 10px
+            padding 40px 60px 60px
+            height 100vh
+            overflow auto
         h1
             display flex
             align-content center
-            font-size 30px
+            font 600 34px/40px 'R'
             i
                 font-size 28px
                 margin 0 15px 0 0
+    section
+        max-width $lg
+        margin auto
 </style>
 
 <script>

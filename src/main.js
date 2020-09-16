@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './App.vue'
+import App from './App'
 import './app.styl'
 
 Vue.use(VueRouter);
@@ -9,11 +9,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: require('./Article.vue').default
+    component: require('./Article').default
   },
   {
     path: '/account',
-    component: require('./Account.vue').default
+    component: require('./Account').default
   }
 ];
 
@@ -22,8 +22,8 @@ const router = new VueRouter({
   mode: 'history', // History API
   //path: '*', component: NotFoundComponent, // 404
   routes, // сокращение `routes: routes`
-  linkActiveClass: "",
-  linkExactActiveClass: "active",
+  linkActiveClass: '',
+  linkExactActiveClass: 'active',
 })
 
 new Vue({

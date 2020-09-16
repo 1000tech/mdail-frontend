@@ -1,30 +1,26 @@
 <template lang="pug">
     main
-        Header
+        Aside
         transition
             router-view
 </template>
 
 <style lang="stylus">
     main
-        position relative
-        min-height 100%
-        max-width 1500px
-        margin auto
-        padding 0 0 env(safe-area-inset-bottom)
         display grid
-        justify-content flex-start
-        grid-template-columns 100px 1fr
-        grid-template-rows 1fr auto
-        grid-template-areas "header aricle"
+        grid-template-rows 70px 1fr
         background $blue
+        min-height 100%
+        @media (min-width $lg)
+            grid-template-rows 1fr
+            grid-template-columns 270px 1fr
 </style>
 
 <script>
-    import Header from './Header.vue'
+    import Aside from './Aside.vue'
     export default {
         components: {
-            Header
+            Aside
         },
         mounted() {
             console.log('App mounted');
