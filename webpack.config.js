@@ -1,7 +1,6 @@
 const
     webpack = require('webpack'),
     path = require('path'),
-    autoprefixer = require('autoprefixer'),
     { VueLoaderPlugin } = require('vue-loader'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     IconFontPlugin = require('icon-font-loader').Plugin;
@@ -49,21 +48,22 @@ module.exports = {
             {
                 test: /\.styl(us)?$/,
                 use: [
-                    'vue-style-loader',
+                    'style-loader',
                     'css-loader',
                     'icon-font-loader',
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins: [
-                                autoprefixer({
-                                    overrideBrowserslist:[
-                                        '> 5%',
-                                        'last 4 versions',
-                                    ]
-                                })
-                            ],
-                            // sourceMap: true
+                            postcssOptions:{
+                                plugins: [
+                                    [
+                                        'postcss-preset-env',
+                                        {
+                                            browsers: 'last 2 versions'
+                                        },
+                                    ],
+                                ],
+                            },
                         }
                     },
                     {
@@ -71,7 +71,7 @@ module.exports = {
                         options: {
                             indentedSyntax: true
                         }
-                    }
+                    },
                 ]
             },
             {
