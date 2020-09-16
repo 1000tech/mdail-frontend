@@ -33,7 +33,7 @@
         @media (min-width $md)
             border-radius 10px 0 0 10px
             padding 40px 60px 60px
-            height 100vh
+            min-height 100vh
             overflow auto
         h1
             display flex
