@@ -17,7 +17,7 @@
 </style>
 
 <script>
-    import Aside from './Aside.vue'
+    import Aside from './Aside'
     export default {
         components: {
             Aside

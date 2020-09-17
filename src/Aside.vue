@@ -46,7 +46,7 @@
                 font 700 18px/40px 'R'
                 padding 0 15px
                 span
-                    margin 0 0 0 8px
+                    margin 0 0 0 10px
     .user-avatar
         width 40px
         height 40px
@@ -55,7 +55,7 @@
 </style>
 
 <script>
-    import Logo from './Logo.vue'
+    import Logo from './Logo'
     export default {
         components: {
             Logo

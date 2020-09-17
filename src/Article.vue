@@ -48,9 +48,9 @@
 </style>
 
 <script>
-    import BookMarkInput from './BookMarkInput.vue'
-    import BookMarkList from './BookMarkList.vue'
-    import ModalDelete from './ModalBookmarkDelete.vue'
+    import BookMarkInput from './BookMarkInput'
+    import BookMarkList from './BookMarkList'
+    import ModalDelete from './ModalBookmarkDelete'
 
     let nextTodoId = 1
 

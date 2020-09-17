@@ -6,7 +6,7 @@ import './app.styl'
 
 Vue.use(VueRouter);
 
-// Определяем компоненты для маршрутов
+// New Router Components
 const routes = [
   {
     path: '/',
@@ -18,7 +18,7 @@ const routes = [
   }
 ];
 
-// Создаём маршрутизатор
+// New Router
 const router = new VueRouter({
   mode: 'history', // History API
   //path: '*', component: NotFoundComponent, // 404
