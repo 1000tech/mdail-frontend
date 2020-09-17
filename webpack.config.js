@@ -97,8 +97,8 @@ module.exports = {
             options: {
                 stylus: {
                     import: [
-                        '../src/css/vars.styl',
-                        '../src/css/func.styl'
+                        path.resolve(__dirname, './src/css/vars.styl'),
+                        path.resolve(__dirname, './src/css/func.styl')
                     ]
                 }
             }
