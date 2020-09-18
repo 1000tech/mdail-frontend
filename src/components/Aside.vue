@@ -4,10 +4,10 @@
             Logo
             router-link(to="/")
                 i.i-bookmark
-                span Marks
+                span Bookmarks
             button
                 i.i-add
-                span Add new Mark
+                span Add Bookmark
         div
             button
                 i.i-night
@@ -55,7 +55,7 @@
 </style>
 
 <script>
-    import Logo from './components/Logo'
+    import Logo from '@/Logo'
     export default {
         components: {
             Logo

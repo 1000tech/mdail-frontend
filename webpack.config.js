@@ -19,7 +19,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
-            '@': path.resolve('src'),
+            '@': path.resolve(__dirname, './src/components'),
         }
     },
     module: {
@@ -97,8 +97,8 @@ module.exports = {
             options: {
                 stylus: {
                     import: [
-                        path.resolve(__dirname, './src/css/vars.styl'),
-                        path.resolve(__dirname, './src/css/func.styl')
+                        path.resolve(__dirname, './src/styles/vars.styl'),
+                        path.resolve(__dirname, './src/styles/func.styl')
                     ]
                 }
             }

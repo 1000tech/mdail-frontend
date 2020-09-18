@@ -48,9 +48,9 @@
 </style>
 
 <script>
-    import BookMarkInput from './BookMarkInput'
-    import BookMarkList from './BookMarkList'
-    import ModalDelete from './ModalBookmarkDelete'
+    import BookMarkInput from '@/BookMarkInput'
+    import BookMarkList from '@/BookMarkList'
+    import ModalDelete from '@/ModalBookmarkDelete'
 
     let nextTodoId = 1
 

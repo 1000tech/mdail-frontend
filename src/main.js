@@ -10,11 +10,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: require('./Article').default
+    component: require('./pages/Bookmarks').default
   },
   {
     path: '/account',
-    component: require('./Account').default
+    component: require('./pages/Account').default
   }
 ];
 

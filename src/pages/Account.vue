@@ -10,7 +10,7 @@
 </style>
 
 <script>
-    // import Logo from './Logo.vue'
+    // import Logo from './Logo'
     export default {
         // components: {
         //     Logo
