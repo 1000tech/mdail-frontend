@@ -1,5 +1,5 @@
 <template lang="pug">
-    aside
+    header
         div
             Logo
             router-link(to="/")
@@ -19,7 +19,7 @@
 </template>
 
 <style lang="stylus">
-    aside
+    header
         display flex
         justify-content space-between
         padding 15px 20px

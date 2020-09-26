@@ -1,6 +1,6 @@
 <template lang="pug">
     main
-        Aside
+        Header
         transition
             router-view
 </template>
@@ -17,10 +17,10 @@
 </style>
 
 <script>
-    import Aside from '@/Aside'
+    import Header from '@/Header'
     export default {
         components: {
-            Aside
+            Header
         },
         mounted() {
             console.log('App mounted');
