@@ -101,9 +101,6 @@
                 }
             },
             removeTodo(idToRemove) {
-                // this.todos = this.todos.filter(todo => {
-                //     return todo.id !== idToRemove
-                // })
                 this.todos = this.todos.filter(todo => todo.id !== idToRemove)
                 this.isModalDeleteVisible = false
             }

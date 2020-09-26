@@ -29,7 +29,10 @@ module.exports = {
                 use: [
                     'vue-loader',
                     {
-                        loader: 'webpack-atomizer-loader'
+                        loader: 'webpack-atomizer-loader',
+                        options: {
+                            configPath: path.resolve(__dirname, './acssConf.js')
+                        }
                     }
                 ]
             },
@@ -54,7 +57,7 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            postcssOptions:{
+                            postcssOptions: {
                                 plugins: [
                                     [
                                         'postcss-preset-env',

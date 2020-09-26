@@ -12,7 +12,7 @@
             button
                 i.i-night
                 span Dark Mode
-            router-link(to="/account" class="Mt(15px)")
+            router-link(to="/account" class="Mt(12px)--lg")
                 .user-avatar
                 span Account
 
@@ -21,9 +21,14 @@
 <style lang="stylus">
     aside
         display flex
-        flex-direction column
         justify-content space-between
         padding 15px 20px
+        @media (max-width $lg)
+            > div
+                display flex
+                align-items center
+        @media (min-width $lg)
+            flex-direction column
         a, button
             display flex
             align-items center
@@ -31,7 +36,6 @@
             width 50px
             height 50px
             font-size 22px
-            margin 0 0 8px
             border-radius 50%
             letter-spacing 1px
             &:hover, &.active
@@ -44,6 +48,7 @@
                 width 100%
                 border-radius 5px
                 font 700 18px/40px 'R'
+                margin 0 0 8px
                 padding 0 15px
                 span
                     margin 0 0 0 10px
