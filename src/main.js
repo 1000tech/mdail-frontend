@@ -22,7 +22,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history', // History API
   //path: '*', component: NotFoundComponent, // 404
-  routes, // сокращение `routes: routes`
+  routes, // `routes: routes`
   linkActiveClass: '',
   linkExactActiveClass: 'active',
 })

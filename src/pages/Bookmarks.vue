@@ -28,13 +28,13 @@
 <style lang='stylus'>
     article
         background $white
+        padding 20px 25px
         border-radius 10px 10px 0 0
-        padding 0 15px 15px
-        @media (min-width $md)
-            border-radius 10px 0 0 10px
+        @media (min-width $lg)
             padding 40px 60px 60px
             min-height 100vh
             overflow auto
+            border-radius 10px 0 0 10px
         h1
             display flex
             align-content center
