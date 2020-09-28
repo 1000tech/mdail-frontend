@@ -29,12 +29,12 @@
 
 <style lang="stylus">
     .add-bookmark
+        height 50px
         margin 16px 0
         padding 8px 10px
-        transition border-color $time
-        border 1px solid $grey
-        background $grey
         border-radius 4px
+        background $grey
+        transition background $time
         &:hover, &:focus
-            border-color $night-grey
+            background $dark-grey
 </style>

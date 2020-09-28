@@ -4,25 +4,34 @@
             h1
                 i.i-bookmark
                 span Bookmarks
+
             BookMarkInput(
                 v-model='newTodoText'
                 placeholder='Add new Bookmark'
                 @keydown.enter='addTodo'
             )
+
             ul(v-if='todos.length')
                 BookMarkList(
                     v-for='todo in todos'
                     :key='todo.id' :todo='todo'
                     @remove='showDeleteModal(todo.id)'
                 )
+
             p(v-else='')
                 | Add your first Bookmark
+
             transition(name="modal")
                 ModalDelete(
-                    :id="deleteItemId"
                     v-if="isModalDeleteVisible"
-                    @close="isModalDeleteVisible = false"
-                    @confirm="removeTodo")
+                    @close="isModalDeleteVisible = false")
+
+                    // Генерируем событие, возможно с передаваемыми данными
+                    button(
+                        type="button"
+                        @click="removeTodo"
+                        :id="deleteItemId")
+                        | Удалить на хуй
 </template>
 
 <style lang='stylus'>
@@ -55,6 +64,7 @@
     let nextTodoId = 1
 
     export default {
+
         components: {
             BookMarkInput,
             BookMarkList,

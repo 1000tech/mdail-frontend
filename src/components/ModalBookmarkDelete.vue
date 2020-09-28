@@ -2,9 +2,8 @@
     .modal
         .modal-backdrop(@click="$emit('close')")
         .modal-content
-            // Генерируем событие, возможно с передаваемыми данными
-            button(type="button" @click="$emit('confirm', id)")
-                | Удалить на хуй
+            slot
+
 
 </template>
 
