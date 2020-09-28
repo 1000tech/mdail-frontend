@@ -29,8 +29,7 @@
                     // Генерируем событие, возможно с передаваемыми данными
                     button(
                         type="button"
-                        @click="removeTodo"
-                        :id="deleteItemId")
+                        @click="removeTodo(deleteItemId)")
                         | Удалить на хуй
 </template>
 
