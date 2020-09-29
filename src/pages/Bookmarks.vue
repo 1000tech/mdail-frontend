@@ -25,6 +25,11 @@
             Modal(
                 v-if="isModalDeleteVisible"
                 @close="isModalDeleteVisible = false")
+                h2 Delete Bookmark
+                p Are you sure you want to delete this Bookmark?
+                button(
+                    @click="isModalDeleteVisible = false")
+                    | Cancel
                 button(
                     @click="removeItem(deleteItemId)")
                     | Delete
@@ -40,13 +45,6 @@
             min-height 100vh
             overflow auto
             border-radius 10px 0 0 10px
-        h1
-            display flex
-            align-content center
-            font 600 34px/40px 'R'
-            i
-                font-size 28px
-                margin 0 15px 0 0
     section
         max-width $lg
         margin auto
