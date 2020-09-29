@@ -14,7 +14,7 @@
             ul(v-if='items.length')
                 BookmarkList(
                     v-for='item in items'
-                    :key='item.id' :item='item'
+                    :item='item' :key='item.id'
                     @remove='showDeleteModal(item.id)'
                 )
 
@@ -25,14 +25,17 @@
             Modal(
                 v-if="isModalDeleteVisible"
                 @close="isModalDeleteVisible = false")
+
                 h2 Delete Bookmark
                 p Are you sure you want to delete this Bookmark?
-                button(
-                    @click="isModalDeleteVisible = false")
-                    | Cancel
-                button(
-                    @click="removeItem(deleteItemId)")
-                    | Delete
+
+                div(class="D(f) Ai(c) Jc(fe)")
+                    button(
+                        @click="isModalDeleteVisible = false")
+                        | Cancel
+                    button(
+                        @click="removeItem(deleteItemId)")
+                        | Delete
 </template>
 
 <style lang='stylus'>

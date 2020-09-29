@@ -34,12 +34,28 @@
         flex-direction column
         overflow-x auto
         width 100%
-        max-width 450px
+        max-width 500px
         margin 0 25px
-        padding 32px
+        padding 30px 35px 35px
         border-radius 5px
-        background #fff
+        background $white
         box-shadow 0 2px 16px 0 $shadow
+        p
+            margin 15px 0 25px
+        button
+            background $grey
+            color $blue
+            font-weight 600
+            letter-spacing 1px
+            border-radius 5px
+            padding 10px 24px
+            &:last-child
+                background $blue
+                color $white
+                margin 0 0 0 20px
+            &:hover
+                background $purple
+                color $white
 </style>
 
 <script>
