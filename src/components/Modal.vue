@@ -1,8 +1,14 @@
 <template lang="pug">
     .modal
         .modal-backdrop(@click="$emit('close')")
+
         .modal-content
-            slot
+            slot(name="text")
+
+            div(class="D(f) Ai(c) Jc(fe)")
+                button(@click="$emit('close')")
+                    | Cancel
+                slot(name="button")
 </template>
 
 <style lang="stylus">

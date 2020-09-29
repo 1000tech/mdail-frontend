@@ -26,13 +26,11 @@
                 v-if="isModalDeleteVisible"
                 @close="isModalDeleteVisible = false")
 
-                h2 Delete Bookmark
-                p Are you sure you want to delete this Bookmark?
+                template(#text)
+                    h2 Delete Bookmark
+                    p Are you sure you want to delete this Bookmark?
 
-                div(class="D(f) Ai(c) Jc(fe)")
-                    button(
-                        @click="isModalDeleteVisible = false")
-                        | Cancel
+                template(#button)
                     button(
                         @click="removeItem(deleteItemId)")
                         | Delete
