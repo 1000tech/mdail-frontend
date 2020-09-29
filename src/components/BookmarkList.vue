@@ -1,15 +1,15 @@
 <template lang="pug">
     li
-        span {{ todo.text }}
+        span {{ item.text }}
         // Генерируем событие, возможно с передаваемыми данными
-        button(@click="$emit('remove', todo.id)")
+        button(@click="$emit('remove', item.id)")
             | X
 </template>
 
 <script>
     export default {
         props: {
-            todo: {
+            item: {
                 type: Object,
                 required: true
             }

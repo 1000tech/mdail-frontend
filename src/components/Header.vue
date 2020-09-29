@@ -22,7 +22,7 @@
     header
         display flex
         justify-content space-between
-        padding 15px 20px 15px 15px
+        padding 14px 20px 14px 15px
         @media (max-width $lg)
             > div
                 display flex
@@ -56,7 +56,6 @@
     .user
         @media (min-width $lg)
             padding 0 6px
-            margin 12px 0 0
     .user-avatar
         width 40px
         height 40px

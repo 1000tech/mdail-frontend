@@ -5,17 +5,17 @@
                 i.i-bookmark
                 span Bookmarks
 
-            BookMarkInput(
-                v-model='newTodoText'
+            BookmarkInput(
+                v-model='newItemText'
                 placeholder='Add new Bookmark'
                 @keydown.enter='addItem'
             )
 
-            ul(v-if='todos.length')
-                BookMarkList(
-                    v-for='todo in todos'
-                    :key='todo.id' :todo='todo'
-                    @remove='showDeleteModal(todo.id)'
+            ul(v-if='items.length')
+                BookmarkList(
+                    v-for='item in items'
+                    :key='item.id' :item='item'
+                    @remove='showDeleteModal(item.id)'
                 )
 
             p(v-else='')
@@ -26,9 +26,8 @@
                 v-if="isModalDeleteVisible"
                 @close="isModalDeleteVisible = false")
                 button(
-                    type="button"
                     @click="removeItem(deleteItemId)")
-                    | Удалить на хуй
+                    | Delete
 </template>
 
 <style lang='stylus'>
@@ -54,17 +53,17 @@
 </style>
 
 <script>
-    import BookMarkInput from '@/BookmarkInput'
-    import BookMarkList from '@/BookmarkList'
+    import BookmarkInput from '@/BookmarkInput'
+    import BookmarkList from '@/BookmarkList'
     import Modal from '@/Modal'
 
-    let nextTodoId = 1
+    let nextItemId = 1
 
     export default {
 
         components: {
-            BookMarkInput,
-            BookMarkList,
+            BookmarkInput,
+            BookmarkList,
             Modal
         },
         data () {
@@ -72,18 +71,18 @@
                 isModalDeleteVisible: false,
                 deleteItemId: null,
 
-                newTodoText: '',
-                todos: [
+                newItemText: '',
+                items: [
                     {
-                        id: nextTodoId++,
+                        id: nextItemId++,
                         text: 'Bookmark 1'
                     },
                     {
-                        id: nextTodoId++,
+                        id: nextItemId++,
                         text: 'Bookmark 2'
                     },
                     {
-                        id: nextTodoId++,
+                        id: nextItemId++,
                         text: 'Bookmark 3'
                     }
                 ]
@@ -98,19 +97,19 @@
 
             // Add Item
             addItem() {
-                const trimmedText = this.newTodoText.trim()
+                const trimmedText = this.newItemText.trim()
                 if (trimmedText) {
-                    this.todos.push({
-                        id: nextTodoId++,
+                    this.items.push({
+                        id: nextItemId++,
                         text: trimmedText
                     })
-                    this.newTodoText = ''
+                    this.newItemText = ''
                 }
             },
 
             // Remove Item
             removeItem(idToRemove) {
-                this.todos = this.todos.filter(todo => todo.id !== idToRemove)
+                this.items = this.items.filter(item => item.id !== idToRemove)
                 this.isModalDeleteVisible = false
             }
         }

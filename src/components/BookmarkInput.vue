@@ -30,7 +30,7 @@
 <style lang="stylus">
     .add-bookmark
         height 50px
-        margin 16px 0
+        margin 20px 0
         padding 8px 10px
         border-radius 4px
         background $grey

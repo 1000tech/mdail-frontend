@@ -15,26 +15,31 @@
 
     .modal
         extend()
-        position fixed
         display flex
         align-items center
         justify-content center
 
     .modal-backdrop
-        extend()
+        position fixed
         z-index 2
+        width 100%
+        height 100%
         background $shadow
         backdrop-filter blur(4px)
 
     .modal-content
         position relative
         z-index 3
-        background #fff
-        box-shadow 0 2px 16px 0 $shadow
-        padding 32px
-        overflow-x auto
         display flex
         flex-direction column
+        overflow-x auto
+        width 100%
+        max-width 450px
+        margin 0 25px
+        padding 32px
+        border-radius 5px
+        background #fff
+        box-shadow 0 2px 16px 0 $shadow
 </style>
 
 <script>
