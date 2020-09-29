@@ -54,14 +54,17 @@
         }
     }
     .jellyfish
-        font-size 5px
-        margin 0 0 20px
         position relative
+        font-size 5px
+        margin 0 0 16px
         filter drop-shadow(0 0 1em cyan)
         height 14em
         animation swim 10s ease-in-out infinite;
         transform-origin 50%
         transform translateY(1.5em)
+        @media (max-width $lg)
+            position absolute
+            left calc(50% - 25px)
         *, :before, :after
             box-sizing content-box
         .arms

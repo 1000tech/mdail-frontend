@@ -12,7 +12,7 @@
             button
                 i.i-night
                 span Dark Mode
-            router-link(to="/account" class="Mt(12px)--lg")
+            router-link(to="/account").user
                 .user-avatar
                 span Account
 
@@ -22,7 +22,7 @@
     header
         display flex
         justify-content space-between
-        padding 15px 20px
+        padding 15px 20px 15px 15px
         @media (max-width $lg)
             > div
                 display flex
@@ -35,6 +35,7 @@
             color $white
             width 50px
             height 50px
+            margin 0 3px
             font-size 22px
             border-radius 50%
             letter-spacing 1px
@@ -52,6 +53,10 @@
                 padding 0 15px
                 span
                     margin 0 0 0 10px
+    .user
+        @media (min-width $lg)
+            padding 0 6px
+            margin 12px 0 0
     .user-avatar
         width 40px
         height 40px

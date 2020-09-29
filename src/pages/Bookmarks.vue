@@ -8,7 +8,7 @@
             BookMarkInput(
                 v-model='newTodoText'
                 placeholder='Add new Bookmark'
-                @keydown.enter='addTodo'
+                @keydown.enter='addItem'
             )
 
             ul(v-if='todos.length')
@@ -21,22 +21,20 @@
             p(v-else='')
                 | Add your first Bookmark
 
-            transition(name="modal")
-                ModalDelete(
-                    v-if="isModalDeleteVisible"
-                    @close="isModalDeleteVisible = false")
-
-                    // Генерируем событие, возможно с передаваемыми данными
-                    button(
-                        type="button"
-                        @click="removeTodo(deleteItemId)")
-                        | Удалить на хуй
+        transition(name="modal")
+            Modal(
+                v-if="isModalDeleteVisible"
+                @close="isModalDeleteVisible = false")
+                button(
+                    type="button"
+                    @click="removeItem(deleteItemId)")
+                    | Удалить на хуй
 </template>
 
 <style lang='stylus'>
     article
         background $white
-        padding 20px 25px
+        padding 25px 28px
         border-radius 10px 10px 0 0
         @media (min-width $lg)
             padding 40px 60px 60px
@@ -58,7 +56,7 @@
 <script>
     import BookMarkInput from '@/BookmarkInput'
     import BookMarkList from '@/BookmarkList'
-    import ModalDelete from '@/ModalBookmarkDelete'
+    import Modal from '@/Modal'
 
     let nextTodoId = 1
 
@@ -67,7 +65,7 @@
         components: {
             BookMarkInput,
             BookMarkList,
-            ModalDelete
+            Modal
         },
         data () {
             return {
@@ -94,12 +92,12 @@
         methods: {
             // Modal
             showDeleteModal(id) {
-                this.deleteItemId = id;
-                this.isModalDeleteVisible = true;
+                this.deleteItemId = id
+                this.isModalDeleteVisible = true
             },
 
-            // List
-            addTodo() {
+            // Add Item
+            addItem() {
                 const trimmedText = this.newTodoText.trim()
                 if (trimmedText) {
                     this.todos.push({
@@ -109,7 +107,9 @@
                     this.newTodoText = ''
                 }
             },
-            removeTodo(idToRemove) {
+
+            // Remove Item
+            removeItem(idToRemove) {
                 this.todos = this.todos.filter(todo => todo.id !== idToRemove)
                 this.isModalDeleteVisible = false
             }
