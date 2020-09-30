@@ -15,6 +15,7 @@
             Error(v-if='errored')
 
             ul(v-else='')
+                li(v-if='loading') Loading...
                 BookmarkList(
                     v-for='item in items'
                     :item='item' :key='item.id'
@@ -41,12 +42,12 @@
 
 <style lang='stylus'>
     article
-        position relative
         background $white
         padding 0 28px 25px
         border-radius 10px 10px 0 0
         @media (min-width $lg)
             padding 0 60px 60px
+            min-height 100%
             height 100vh
             overflow auto
             border-radius 10px 0 0 10px
@@ -91,6 +92,8 @@
                 isModalDeleteVisible: false,
                 deleteItemId: null,
                 newItemText: '',
+
+                loading: true,
                 errored: false,
                 items: [],
             }
