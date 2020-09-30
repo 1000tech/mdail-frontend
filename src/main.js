@@ -18,7 +18,7 @@ const routes = [
   }
 ];
 
-// New Router
+// Create router
 const router = new VueRouter({
   mode: 'history', // History API
   //path: '*', component: NotFoundComponent, // 404

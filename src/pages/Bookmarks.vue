@@ -55,11 +55,11 @@
     import BookmarkInput from '@/BookmarkInput'
     import BookmarkList from '@/BookmarkList'
     import Modal from '@/Modal'
+    import axios from 'axios'
 
     let nextItemId = 1
 
     export default {
-
         components: {
             BookmarkInput,
             BookmarkList,
@@ -69,23 +69,22 @@
             return {
                 isModalDeleteVisible: false,
                 deleteItemId: null,
-
                 newItemText: '',
-                items: [
-                    {
-                        id: nextItemId++,
-                        text: 'Bookmark 1'
-                    },
-                    {
-                        id: nextItemId++,
-                        text: 'Bookmark 2'
-                    },
-                    {
-                        id: nextItemId++,
-                        text: 'Bookmark 3'
-                    }
-                ]
+                items: [],
             }
+        },
+        created() {
+            axios
+                .get('https://cors-anywhere.herokuapp.com/' + 'https://test-frontend-api.herokuapp.com/galaxies')
+                .then(response => {
+                    this.items = response.data
+                })
+                .catch(error =>
+                    this.errored = true
+                )
+                .finally(() =>
+                    this.loading = false
+                )
         },
         methods: {
             // Modal
@@ -100,7 +99,7 @@
                 if (trimmedText) {
                     this.items.push({
                         id: nextItemId++,
-                        text: trimmedText
+                        name: trimmedText
                     })
                     this.newItemText = ''
                 }
@@ -111,6 +110,21 @@
                 this.items = this.items.filter(item => item.id !== idToRemove)
                 this.isModalDeleteVisible = false
             }
-        }
+        },
+        computed: {
+            filteredList () {
+                let name = this.name
+
+                if (this.sortBy && name==='') {
+                    this.sortBy = false
+                    return this.items.reverse()
+                } else {
+                    return this.items.filter(function(elem) {
+                        if (name==='') return true
+                        else return elem.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+                    })
+                }
+            }
+        },
     }
 </script>
