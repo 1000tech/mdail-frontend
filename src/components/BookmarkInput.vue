@@ -6,6 +6,18 @@
     )
 </template>
 
+<style lang="stylus">
+    .add-bookmark
+        height 50px
+        margin 20px 0 0
+        padding 8px 10px
+        border-radius 4px
+        background $grey
+        transition background $time
+        &:hover, &:focus
+            background $dark-grey
+</style>
+
 <script>
     export default {
         props: {
@@ -26,15 +38,3 @@
         }
     }
 </script>
-
-<style lang="stylus">
-    .add-bookmark
-        height 50px
-        margin 20px 0
-        padding 8px 10px
-        border-radius 4px
-        background $grey
-        transition background $time
-        &:hover, &:focus
-            background $dark-grey
-</style>

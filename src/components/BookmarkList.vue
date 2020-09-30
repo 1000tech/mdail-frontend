@@ -6,6 +6,13 @@
             | X
 </template>
 
+<style lang="stylus">
+    li
+        display flex
+        align-items center
+        height 50px
+</style>
+
 <script>
     export default {
         props: {
