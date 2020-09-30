@@ -22,6 +22,8 @@
     header
         display flex
         justify-content space-between
+        position sticky
+        top 0
         padding 14px 20px 14px 15px
         @media (max-width $lg)
             > div

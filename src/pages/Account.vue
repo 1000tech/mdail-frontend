@@ -1,8 +1,9 @@
 <template lang="pug">
     article
-        h1
-            i.i-user
-            span Account
+        .title
+            h1
+                i.i-user
+                span Account
 </template>
 
 <style lang="stylus">

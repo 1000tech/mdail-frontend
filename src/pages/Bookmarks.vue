@@ -1,17 +1,19 @@
 <template lang='pug'>
     article
         section
-            h1
-                i.i-bookmark
-                span Bookmarks
+            .title
+                h1
+                    i.i-bookmark
+                    span Bookmarks
 
-            BookmarkInput(
-                v-model='newItemText'
-                placeholder='Add new Bookmark'
-                @keydown.enter='addItem'
-            )
+                BookmarkInput(
+                    v-model='newItemText'
+                    placeholder='Add new Bookmark'
+                    @keydown.enter='addItem'
+                )
 
             Error(v-if='errored')
+
             ul(v-else='')
                 BookmarkList(
                     v-for='item in items'
@@ -39,21 +41,37 @@
 
 <style lang='stylus'>
     article
+        position relative
         background $white
-        padding 25px 28px
+        padding 0 28px 25px
         border-radius 10px 10px 0 0
         @media (min-width $lg)
-            padding 40px 60px 60px
-            min-height 100vh
+            padding 0 60px 60px
+            height 100vh
             overflow auto
             border-radius 10px 0 0 10px
     section
         max-width $lg
         margin auto
+    .title
+        position sticky
+        top 0
+        background $white
+        padding 25px 0 0
+        @media (min-width $lg)
+            padding 40px 0 0
+        &:after
+            content ''
+            position absolute
+            z-index 1
+            left 0
+            right 0
+            bottom -15px
+            height 15px
+            background linear-gradient($white,rgba(255,255,255,.1))
 </style>
 
 <script>
-    import axios from 'axios'
     import Error from '@/Error'
     import Modal from '@/Modal'
     import BookmarkInput from '@/BookmarkInput'
@@ -78,10 +96,10 @@
             }
         },
         created() {
-            axios
-                .get('https://cors-anywhere.herokuapp.com/' + 'https://test-frontend-api.herokuapp.com/galaxies')
-                .then(response => {
-                    this.items = response.data
+            fetch('https://cors-anywhere.herokuapp.com/' + 'https://test-frontend-api.herokuapp.com/galaxies')
+                .then(res => res.json())
+                .then(items => {
+                    this.items = items
                 })
                 .catch(error =>
                     this.errored = true
