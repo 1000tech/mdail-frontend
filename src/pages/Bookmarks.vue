@@ -11,7 +11,8 @@
                 @keydown.enter='addItem'
             )
 
-            ul(v-if='items.length')
+            Error(v-if='errored')
+            ul(v-else='')
                 BookmarkList(
                     v-for='item in items'
                     :item='item' :key='item.id'
@@ -52,24 +53,27 @@
 </style>
 
 <script>
+    import axios from 'axios'
+    import Error from '@/Error'
+    import Modal from '@/Modal'
     import BookmarkInput from '@/BookmarkInput'
     import BookmarkList from '@/BookmarkList'
-    import Modal from '@/Modal'
-    import axios from 'axios'
 
     let nextItemId = 1
 
     export default {
         components: {
+            Error,
+            Modal,
             BookmarkInput,
             BookmarkList,
-            Modal
         },
         data () {
             return {
                 isModalDeleteVisible: false,
                 deleteItemId: null,
                 newItemText: '',
+                errored: false,
                 items: [],
             }
         },
