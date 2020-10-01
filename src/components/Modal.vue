@@ -1,6 +1,9 @@
 <template lang="pug">
     .modal
-        .modal-backdrop(@click="$emit('close')")
+        .modal-backdrop(
+            @click="$emit('close')"
+            @keyup.esc='removeItem(deleteItemId)'
+        )
 
         .modal-content
             slot(name="text")

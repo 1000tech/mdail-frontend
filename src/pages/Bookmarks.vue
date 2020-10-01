@@ -29,7 +29,8 @@
         transition(name="modal")
             Modal(
                 v-if="isModalDeleteVisible"
-                @close="isModalDeleteVisible = false")
+                @close="isModalDeleteVisible = false"
+            )
 
                 template(#text)
                     h2 Delete Bookmark

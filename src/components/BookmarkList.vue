@@ -1,7 +1,6 @@
 <template lang="pug">
     li
         span {{ item.name }}
-        // Генерируем событие, возможно с передаваемыми данными
         button(@click="$emit('remove', item.id)")
             | X
 </template>
