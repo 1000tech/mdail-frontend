@@ -51,7 +51,7 @@
                 width 100%
                 border-radius 5px
                 font 700 18px/40px 'R'
-                margin 0 0 8px
+                margin 0 0 10px
                 padding 0 15px
                 span
                     margin 0 0 0 10px

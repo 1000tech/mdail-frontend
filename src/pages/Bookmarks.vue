@@ -12,15 +12,16 @@
                     @keydown.enter='addItem'
                 )
 
-            Error(v-if='errored')
+            p(v-if='loading') Loading...
 
-            ul(v-else='')
-                li(v-if='loading') Loading...
+            ul(v-else-if='items.length')
                 BookmarkList(
                     v-for='item in items'
                     :item='item' :key='item.id'
                     @remove='showDeleteModal(item.id)'
                 )
+
+            Error(v-else-if='errored')
 
             p(v-else='')
                 | Add your first Bookmark
