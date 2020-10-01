@@ -1,5 +1,5 @@
 <template lang="pug">
-    article
+    section
         .title
             h1
                 i.i-user

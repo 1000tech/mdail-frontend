@@ -1,30 +1,29 @@
 <template lang='pug'>
-    article
-        section
-            .title
-                h1
-                    i.i-bookmark
-                    span Bookmarks
+    section
+        .title
+            h1
+                i.i-bookmark
+                span Bookmarks
 
-                BookmarkInput(
-                    v-model='newItemText'
-                    placeholder='Add new Bookmark'
-                    @keydown.enter='addItem'
-                )
+            BookmarkInput(
+                v-model='newItemText'
+                placeholder='Add new Bookmark'
+                @keydown.enter='addItem'
+            )
 
-            Loading(v-if='loading')
+        Loading(v-if='loading')
 
-            ul(v-else-if='items.length')
-                BookmarkList(
-                    v-for='item in items'
-                    :item='item' :key='item.id'
-                    @remove='showDeleteModal(item.id)'
-                )
+        ul(v-else-if='items.length')
+            BookmarkList(
+                v-for='item in items'
+                :item='item' :key='item.id'
+                @remove='showDeleteModal(item.id)'
+            )
 
-            Error(v-else-if='errored')
+        Error(v-else-if='errored')
 
-            p(v-else='')
-                | Add your first Bookmark
+        p(v-else='')
+            | Add your first Bookmark
 
         transition(name="modal")
             Modal(
@@ -43,19 +42,10 @@
 </template>
 
 <style lang='stylus'>
-    article
-        background $white
-        padding 0 28px 25px
-        border-radius 10px 10px 0 0
-        @media (min-width $lg)
-            padding 0 60px 60px
-            min-height 100%
-            height 100vh
-            overflow auto
-            border-radius 10px 0 0 10px
     section
         max-width $lg
         margin auto
+
     .title
         position sticky
         top 0
