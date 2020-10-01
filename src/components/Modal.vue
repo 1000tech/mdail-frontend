@@ -2,7 +2,6 @@
     .modal
         .modal-backdrop(
             @click="$emit('close')"
-            @keyup.esc='removeItem(deleteItemId)'
         )
 
         .modal-content
