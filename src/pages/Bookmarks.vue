@@ -12,7 +12,7 @@
                     @keydown.enter='addItem'
                 )
 
-            p(v-if='loading') Loading...
+            Loading(v-if='loading')
 
             ul(v-else-if='items.length')
                 BookmarkList(
@@ -75,6 +75,7 @@
 </style>
 
 <script>
+    import Loading from "@/Loading"
     import Error from '@/Error'
     import Modal from '@/Modal'
     import BookmarkInput from '@/BookmarkInput'
@@ -84,6 +85,7 @@
 
     export default {
         components: {
+            Loading,
             Error,
             Modal,
             BookmarkInput,
