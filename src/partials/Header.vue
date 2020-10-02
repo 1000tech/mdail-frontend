@@ -41,6 +41,8 @@
             font-size 22px
             border-radius 50%
             letter-spacing 1px
+            &.active
+                pointer-events none
             &:hover, &.active
                 background $purple
             @media (max-width $lg)
