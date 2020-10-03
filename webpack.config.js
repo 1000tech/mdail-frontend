@@ -8,10 +8,14 @@ const
 module.exports = {
     mode: 'development',
     entry: [
-        './src/main.js'
+        path.resolve(__dirname, './src/main.js'),
     ],
+    output: {
+        publicPath: '/',
+    },
     devServer: {
         hot: true,
+        historyApiFallback: true,
         watchOptions: {
             poll: true
         }
@@ -81,7 +85,7 @@ module.exports = {
                 test: /\.(svg|ttf|woff|woff2)$/,
                 use: [
                     {
-                        loader: 'file-loader?name=/src/assets/fonts/[name].[ext]'
+                        loader: 'file-loader?name=src/assets/fonts/[name].[ext]'
                     }
                 ]
             }
