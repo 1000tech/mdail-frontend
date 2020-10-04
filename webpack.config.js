@@ -23,6 +23,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
+            '#': path.resolve(__dirname, './src/pages'),
             '@': path.resolve(__dirname, './src/partials'),
         }
     },

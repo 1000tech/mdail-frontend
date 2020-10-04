@@ -42,26 +42,7 @@
 </template>
 
 <style lang='stylus'>
-    section
-        max-width $lg
-        margin auto
 
-    .title
-        position sticky
-        top 0
-        background $white
-        padding 25px 0 0
-        @media (min-width $lg)
-            padding 40px 0 0
-        &:after
-            content ''
-            position absolute
-            z-index 1
-            left 0
-            right 0
-            bottom -15px
-            height 15px
-            background linear-gradient($white,rgba(255,255,255,.1))
 </style>
 
 <script>
