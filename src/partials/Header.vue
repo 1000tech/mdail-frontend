@@ -76,6 +76,6 @@
     export default {
         components: {
             Logo
-        },
+        }
     }
 </script>

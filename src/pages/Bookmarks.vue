@@ -17,7 +17,6 @@
             BookmarkList(
                 v-for='item in items'
                 :item='item'
-                :key='item.id'
                 @remove='showDeleteModal(item.id)'
             )
 
@@ -63,7 +62,7 @@
             BookmarkInput,
             BookmarkList,
         },
-        data () {
+        data() {
             return {
                 isModalDeleteVisible: false,
                 deleteItemId: null,
@@ -79,7 +78,7 @@
                 .then(items =>
                     this.items = items
                 )
-                .catch((error) =>
+                .catch(error =>
                     this.errored = true
                 )
                 .finally(() =>
@@ -113,14 +112,14 @@
             }
         },
         computed: {
-            filteredList () {
+            filteredList() {
                 let name = this.name
 
                 if (this.sortBy && name === '') {
                     this.sortBy = false
                     return this.items.reverse()
                 } else {
-                    return this.items.filter(function(elem) {
+                    return this.items.filter((elem) => {
                         if (name === '') {
                             return true
                         }
@@ -130,6 +129,6 @@
                     })
                 }
             }
-        },
+        }
     }
 </script>

@@ -77,7 +77,7 @@
 
 <script>
     export default {
-        data () {
+        data() {
             return {
                 positions: {
                     clientX: undefined,
@@ -104,10 +104,10 @@
                 this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
                 this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
             },
-            closeDragElement () {
+            closeDragElement() {
                 document.onmouseup = null
                 document.onmousemove = null
             }
         }
-}
+    }
 </script>
