@@ -10,8 +10,8 @@
     .add-bookmark
         height 50px
         margin 20px 0 0
-        padding 8px 10px
-        border-radius 5px
+        padding 8px 12px
+        border-radius 7px
         background $grey
         transition background $time
         &:hover, &:focus

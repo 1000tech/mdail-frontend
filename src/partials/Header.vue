@@ -44,7 +44,9 @@
             &.active
                 pointer-events none
             &:hover, &.active
-                background $purple
+                background $blue-hover
+            &:active
+                background $blue-active
             @media (max-width $lg)
                 justify-content center
                 span
@@ -57,9 +59,11 @@
                 padding 0 15px
                 span
                     margin 0 0 0 10px
+
     .user
         @media (min-width $lg)
             padding 0 6px
+
     .user-avatar
         width 40px
         height 40px

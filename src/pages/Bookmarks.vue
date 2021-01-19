@@ -16,7 +16,8 @@
         ul(v-else-if='items.length')
             BookmarkList(
                 v-for='item in items'
-                :item='item' :key='item.id'
+                :item='item'
+                :key='item.id'
                 @remove='showDeleteModal(item.id)'
             )
 
@@ -67,7 +68,6 @@
                 isModalDeleteVisible: false,
                 deleteItemId: null,
                 newItemText: '',
-
                 loading: true,
                 errored: false,
                 items: [],
@@ -76,10 +76,10 @@
         created() {
             fetch('https://cors-anywhere.herokuapp.com/' + 'https://test-frontend-api.herokuapp.com/galaxies')
                 .then(res => res.json())
-                .then(items => {
+                .then(items =>
                     this.items = items
-                })
-                .catch(error =>
+                )
+                .catch((error) =>
                     this.errored = true
                 )
                 .finally(() =>
@@ -87,6 +87,7 @@
                 )
         },
         methods: {
+
             // Modal
             showDeleteModal(id) {
                 this.deleteItemId = id
@@ -115,13 +116,17 @@
             filteredList () {
                 let name = this.name
 
-                if (this.sortBy && name==='') {
+                if (this.sortBy && name === '') {
                     this.sortBy = false
                     return this.items.reverse()
                 } else {
                     return this.items.filter(function(elem) {
-                        if (name==='') return true
-                        else return elem.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+                        if (name === '') {
+                            return true
+                        }
+                        else {
+                            return elem.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+                        }
                     })
                 }
             }

@@ -46,7 +46,7 @@
             right 0
             bottom -15px
             height 15px
-            background linear-gradient($white,rgba(255,255,255,.1))
+            background linear-gradient($white,rgba(255,255,255,.3))
 </style>
 
 <script>

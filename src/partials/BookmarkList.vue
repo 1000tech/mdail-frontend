@@ -6,6 +6,8 @@
 </template>
 
 <style lang="stylus">
+    ul
+        padding 0 12px
     li
         display flex
         align-items center
