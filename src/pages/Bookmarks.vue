@@ -52,8 +52,6 @@
     import BookmarkInput from '@/BookmarkInput'
     import BookmarkList from '@/BookmarkList'
 
-    let nextItemId = 1
-
     export default {
         components: {
             Loading,
@@ -95,7 +93,10 @@
 
             // Add Item
             addItem() {
-                const trimmedText = this.newItemText.trim()
+                let
+                    nextItemId,
+                    trimmedText = this.newItemText.trim()
+
                 if (trimmedText) {
                     this.items.push({
                         id: nextItemId++,
@@ -119,7 +120,7 @@
                     this.sortBy = false
                     return this.items.reverse()
                 } else {
-                    return this.items.filter((elem) => {
+                    return this.items.filter(elem => {
                         if (name === '') {
                             return true
                         }
