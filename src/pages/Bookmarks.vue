@@ -17,6 +17,7 @@
             BookmarkList(
                 v-for='item in items'
                 :item='item'
+                :key='item.id'
                 @remove='showDeleteModal(item.id)'
             )
 
