@@ -11,5 +11,3 @@ npm i
 ```bash
 npm run dev
 ```
-
-Open http://localhost:8080/ in browser.

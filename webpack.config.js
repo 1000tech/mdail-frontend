@@ -3,15 +3,14 @@ const
     path = require('path'),
     { VueLoaderPlugin } = require('vue-loader'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    IconFontPlugin = require('icon-font-loader').Plugin;
+    IconFontPlugin = require('icon-font-loader').Plugin,
+    { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'development',
-    entry: [
-        path.resolve(__dirname, './src/main.js'),
-    ],
+    entry: path.resolve(__dirname, './src/main.js'),
     output: {
-        publicPath: '/',
+        publicPath: '/'
     },
     devServer: {
         hot: true,
@@ -24,7 +23,7 @@ module.exports = {
         extensions: ['.js', '.vue'],
         alias: {
             '#': path.resolve(__dirname, './src/pages'),
-            '@': path.resolve(__dirname, './src/partials'),
+            '@': path.resolve(__dirname, './src/partials')
         }
     },
     module: {
@@ -59,27 +58,13 @@ module.exports = {
                     'style-loader',
                     'css-loader',
                     'icon-font-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: {
-                                plugins: [
-                                    [
-                                        'postcss-preset-env',
-                                        {
-                                            browsers: 'last 2 versions'
-                                        },
-                                    ],
-                                ],
-                            },
-                        }
-                    },
+                    'postcss-loader',
                     {
                         loader: 'stylus-loader',
                         options: {
                             indentedSyntax: true
                         }
-                    },
+                    }
                 ]
             },
             {
@@ -93,13 +78,12 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new IconFontPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'index.html',
-            inject: true
+            template: 'index.html'
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
@@ -112,4 +96,4 @@ module.exports = {
             }
         })
     ]
-};
+}
