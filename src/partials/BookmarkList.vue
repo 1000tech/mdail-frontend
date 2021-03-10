@@ -1,6 +1,17 @@
+<script>
+    export default {
+        props: {
+            item: {
+                type: Object,
+                required: true
+            }
+        }
+    }
+</script>
+
 <template lang='pug'>
     li
-        span {{item.name}}
+        span {{item.title}}
         button(@click="$emit('remove', item.id)")
             | X
 </template>
@@ -13,14 +24,3 @@
         align-items center
         height 50px
 </style>
-
-<script>
-    export default {
-        props: {
-            item: {
-                type: Object,
-                required: true
-            }
-        }
-    }
-</script>

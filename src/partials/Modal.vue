@@ -1,3 +1,40 @@
+<script>
+    export default {
+        data() {
+            return {
+                positions: {
+                    clientX: undefined,
+                    clientY: undefined,
+                    movementX: 0,
+                    movementY: 0
+                }
+            }
+        },
+        methods: {
+            dragMouseDown(event) {
+                event.preventDefault()
+                this.positions.clientX = event.clientX
+                this.positions.clientY = event.clientY
+                document.onmousemove = this.elementDrag
+                document.onmouseup = this.closeDragElement
+            },
+            elementDrag(event) {
+                event.preventDefault()
+                this.positions.movementX = this.positions.clientX - event.clientX
+                this.positions.movementY = this.positions.clientY - event.clientY
+                this.positions.clientX = event.clientX
+                this.positions.clientY = event.clientY
+                this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
+                this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
+            },
+            closeDragElement() {
+                document.onmouseup = null
+                document.onmousemove = null
+            }
+        }
+    }
+</script>
+
 <template lang='pug'>
     .modal
         .modal-backdrop(
@@ -74,40 +111,3 @@
             &:active
                 background $blue-active
 </style>
-
-<script>
-    export default {
-        data() {
-            return {
-                positions: {
-                    clientX: undefined,
-                    clientY: undefined,
-                    movementX: 0,
-                    movementY: 0
-                }
-            }
-        },
-        methods: {
-            dragMouseDown(event) {
-                event.preventDefault()
-                this.positions.clientX = event.clientX
-                this.positions.clientY = event.clientY
-                document.onmousemove = this.elementDrag
-                document.onmouseup = this.closeDragElement
-            },
-            elementDrag(event) {
-                event.preventDefault()
-                this.positions.movementX = this.positions.clientX - event.clientX
-                this.positions.movementY = this.positions.clientY - event.clientY
-                this.positions.clientX = event.clientX
-                this.positions.clientY = event.clientY
-                this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
-                this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
-            },
-            closeDragElement() {
-                document.onmouseup = null
-                document.onmousemove = null
-            }
-        }
-    }
-</script>

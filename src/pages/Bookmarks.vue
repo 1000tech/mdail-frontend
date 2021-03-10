@@ -1,3 +1,91 @@
+<script>
+    import Loading from '@/Loading'
+    import Error from '@/Error'
+    import Modal from '@/Modal'
+    import BookmarkInput from '@/BookmarkInput'
+    import BookmarkList from '@/BookmarkList'
+
+    export default {
+        components: {
+            Loading,
+            Error,
+            Modal,
+            BookmarkInput,
+            BookmarkList,
+        },
+        data() {
+            return {
+                isModalDeleteVisible: false,
+                deleteItemId: null,
+                newItemText: '',
+                loading: true,
+                errored: false,
+                items: [],
+            }
+        },
+        created() {
+            fetch(APP_URL + 'bookmarks')
+                .then(res => res.json())
+                .then(res => {
+                    this.items = res.items
+                })
+                .catch(error =>
+                    this.errored = true
+                )
+                .finally(() =>
+                    this.loading = false
+                )
+        },
+        methods: {
+            // Modal
+            showDeleteModal(id) {
+                this.deleteItemId = id
+                this.isModalDeleteVisible = true
+            },
+
+            // Add Item
+            addItem() {
+                let
+                    nextItemId,
+                    trimmedText = this.newItemText.trim()
+
+                if (trimmedText) {
+                    this.items.push({
+                        id: nextItemId++,
+                        title: trimmedText
+                    })
+                    this.newItemText = ''
+                }
+            },
+
+            // Remove Item
+            removeItem(idToRemove) {
+                this.items = this.items.filter(item => item.id !== idToRemove)
+                this.isModalDeleteVisible = false
+            }
+        },
+        computed: {
+            filteredList() {
+                let title = this.title
+
+                if (this.sortBy && title === '') {
+                    this.sortBy = false
+                    return this.items.reverse()
+                } else {
+                    return this.items.filter(elem => {
+                        if (title === '') {
+                            return true
+                        }
+                        else {
+                            return elem.title.toLowerCase().indexOf(title.toLowerCase()) > -1
+                        }
+                    })
+                }
+            }
+        }
+    }
+</script>
+
 <template lang='pug'>
     section
         .title
@@ -45,92 +133,3 @@
 <style lang='stylus'>
 
 </style>
-
-<script>
-    import Loading from '@/Loading'
-    import Error from '@/Error'
-    import Modal from '@/Modal'
-    import BookmarkInput from '@/BookmarkInput'
-    import BookmarkList from '@/BookmarkList'
-
-    export default {
-        components: {
-            Loading,
-            Error,
-            Modal,
-            BookmarkInput,
-            BookmarkList,
-        },
-        data() {
-            return {
-                isModalDeleteVisible: false,
-                deleteItemId: null,
-                newItemText: '',
-                loading: true,
-                errored: false,
-                items: [],
-            }
-        },
-        created() {
-            fetch('https://cors-anywhere.herokuapp.com/' + 'https://test-frontend-api.herokuapp.com/galaxies')
-                .then(res => res.json())
-                .then(items =>
-                    this.items = items
-                )
-                .catch(error =>
-                    this.errored = true
-                )
-                .finally(() =>
-                    this.loading = false
-                )
-        },
-        methods: {
-
-            // Modal
-            showDeleteModal(id) {
-                this.deleteItemId = id
-                this.isModalDeleteVisible = true
-            },
-
-            // Add Item
-            addItem() {
-                let
-                    nextItemId,
-                    trimmedText = this.newItemText.trim()
-
-                if (trimmedText) {
-                    this.items.push({
-                        id: nextItemId++,
-                        name: trimmedText
-                    })
-                    this.newItemText = ''
-                }
-            },
-
-            // Remove Item
-            removeItem(idToRemove) {
-                this.items = this.items.filter(item => item.id !== idToRemove)
-                this.isModalDeleteVisible = false
-            }
-        },
-        computed: {
-            filteredList() {
-                let name = this.name
-
-                if (this.sortBy && name === '') {
-                    this.sortBy = false
-                    return this.items.reverse()
-                } else {
-                    return this.items.filter(elem => {
-                        if (name === '') {
-                            return true
-                        }
-                        else {
-                            return elem.name.toLowerCase().indexOf(name.toLowerCase()) > -1
-                        }
-                    })
-                }
-            }
-        }
-    }
-</script>

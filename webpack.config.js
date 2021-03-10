@@ -6,6 +6,8 @@ const
     IconFontPlugin = require('icon-font-loader').Plugin,
     { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+require('dotenv').config()
+
 module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/main.js'),
@@ -77,14 +79,14 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new IconFontPlugin(),
+        new webpack.DefinePlugin({
+            APP_URL: JSON.stringify(process.env.APP_URL),
+            APP_PATH: JSON.stringify(process.env.APP_PATH)
+        }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html'
-        }),
-        new webpack.DefinePlugin({
-            APP_URL: JSON.stringify(process.env.APP_URL),
-            APP_PATH: JSON.stringify(process.env.APP_PATH)
         }),
         new webpack.LoaderOptionsPlugin({
             options: {
