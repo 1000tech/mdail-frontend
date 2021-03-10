@@ -26,10 +26,10 @@
         p(v-else='')
             | Add your first Bookmark
 
-        transition(name="modal")
+        transition(name='modal')
             Modal(
-                v-if="isModalDeleteVisible"
-                @close="isModalDeleteVisible = false"
+                v-if='isModalDeleteVisible'
+                @close='isModalDeleteVisible = false'
             )
 
                 template(#text)
@@ -38,7 +38,7 @@
 
                 template(#button)
                     button(
-                        @click="removeItem(deleteItemId)")
+                        @click='removeItem(deleteItemId)')
                         | Delete
 </template>
 
@@ -47,7 +47,7 @@
 </style>
 
 <script>
-    import Loading from "@/Loading"
+    import Loading from '@/Loading'
     import Error from '@/Error'
     import Modal from '@/Modal'
     import BookmarkInput from '@/BookmarkInput'

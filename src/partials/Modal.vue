@@ -1,20 +1,20 @@
-<template lang="pug">
+<template lang='pug'>
     .modal
         .modal-backdrop(
             @click="$emit('close')"
         )
 
-        .modal-wrap(ref="draggableContainer")
-            .modal-content(@mousedown="dragMouseDown")
-                slot(name="text")
+        .modal-wrap(ref='draggableContainer')
+            .modal-content(@mousedown='dragMouseDown')
+                slot(name='text')
 
-                div(class="D(f) Ai(c) Jc(fe)")
+                div(class='D(f) Ai(c) Jc(fe)')
                     button(@click="$emit('close')")
                         | Cancel
-                    slot(name="button")
+                    slot(name='button')
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     .modal-enter-active, .modal-leave-active
         transition opacity $time
 

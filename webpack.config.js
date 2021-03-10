@@ -10,14 +10,11 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/main.js'),
     output: {
-        publicPath: '/'
+        filename: 'script.[hash].js',
+        publicPath: process.env.APP_PATH
     },
     devServer: {
-        hot: true,
         historyApiFallback: true,
-        watchOptions: {
-            poll: true
-        }
     },
     resolve: {
         extensions: ['.js', '.vue'],
@@ -84,6 +81,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html'
+        }),
+        new webpack.DefinePlugin({
+            APP_URL: JSON.stringify(process.env.APP_URL),
+            APP_PATH: JSON.stringify(process.env.APP_PATH)
         }),
         new webpack.LoaderOptionsPlugin({
             options: {

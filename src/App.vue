@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
     main
         Header
         article
@@ -6,7 +6,7 @@
                 router-view
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     main
         display grid
         grid-template-rows 70px 1fr
@@ -56,7 +56,7 @@
             Header
         },
         mounted() {
-            console.log('App mounted');
+            console.log('App mounted')
         },
     }
 </script>

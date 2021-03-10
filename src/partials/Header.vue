@@ -1,8 +1,8 @@
-<template lang="pug">
+<template lang='pug'>
     header
         div
             Logo
-            router-link(to="/")
+            router-link(to='/')
                 i.i-bookmark
                 span Bookmarks
             button
@@ -12,13 +12,13 @@
             button
                 i.i-night
                 span Dark Mode
-            router-link(to="/account").user
+            router-link(to='/account').user
                 .user-avatar
                 span Account
 
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     header
         display flex
         justify-content space-between

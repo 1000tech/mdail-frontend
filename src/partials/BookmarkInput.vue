@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
     input.add-bookmark(
         type='text'
         :value='value'
@@ -6,7 +6,7 @@
     )
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     .add-bookmark
         height 50px
         margin 20px 0 0
@@ -27,7 +27,7 @@
             }
         },
         computed: {
-            listeners () {
+            listeners() {
                 return {
                     // Pass all component listeners directly to input
                     ...this.$listeners,

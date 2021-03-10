@@ -1,11 +1,11 @@
-<template lang="pug">
+<template lang='pug'>
     li
-        span {{ item.name }}
+        span {{item.name}}
         button(@click="$emit('remove', item.id)")
             | X
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     ul
         padding 0 12px
     li

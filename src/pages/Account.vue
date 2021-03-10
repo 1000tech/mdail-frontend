@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
     section
         .title
             h1
@@ -6,7 +6,7 @@
                 span Account
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
 
 </style>
 

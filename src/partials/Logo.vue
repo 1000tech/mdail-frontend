@@ -1,4 +1,4 @@
-<template lang="pug">
+<template lang='pug'>
     .jellyfish
         .arms
             .arm(style='--scaleX:1;--scaleY:1;--rotate:3;')
@@ -25,7 +25,7 @@
                 .eyelid
 </template>
 
-<style lang="stylus">
+<style lang='stylus'>
     @keyframes swim {
         20% {
             transform: translateY(1.5em);
