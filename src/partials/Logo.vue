@@ -26,6 +26,29 @@
 </template>
 
 <style lang='stylus'>
+    .jellyfish
+        position relative
+        font-size 5px
+        filter drop-shadow(0 0 1em cyan)
+        height 14em
+        animation swim 10s ease-in-out infinite
+        transform-origin 50%
+        transform translateY(1.5em)
+
+        @media (max-width $lg)
+            position absolute
+            left calc(50% - 25px)
+
+        @media (min-width $lg)
+            margin 0 0 16px
+
+        *, :before, :after
+            box-sizing content-box
+
+        .arms
+            transform-origin 50% 0
+            animation squash 10s ease-in-out infinite
+
     @keyframes swim {
         20% {
             transform: translateY(1.5em);
@@ -53,23 +76,6 @@
             transform: scaleX(var(--scaleX)) scaleY(var(--scaleY)) rotate(calc(var(--rotate) * -1deg));
         }
     }
-    .jellyfish
-        position relative
-        font-size 5px
-        margin 0 0 16px
-        filter drop-shadow(0 0 1em cyan)
-        height 14em
-        animation swim 10s ease-in-out infinite;
-        transform-origin 50%
-        transform translateY(1.5em)
-        @media (max-width $lg)
-            position absolute
-            left calc(50% - 25px)
-        *, :before, :after
-            box-sizing content-box
-        .arms
-            transform-origin 50% 0
-            animation squash 10s ease-in-out infinite;
 
     .arms .arm {
         position: absolute;

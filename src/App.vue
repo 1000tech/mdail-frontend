@@ -18,7 +18,7 @@
 
     article
         background $white
-        padding 0 28px 25px
+        padding 0 20px 20px
         border-radius 10px 10px 0 0
         @media (min-width $lg)
             padding 0 60px 60px
@@ -35,7 +35,7 @@
         position sticky
         top 0
         background $white
-        padding 25px 0 0
+        padding 20px 0 0
         @media (min-width $lg)
             padding 40px 0 0
         &:after
@@ -57,6 +57,6 @@
         },
         mounted() {
             console.log('App mounted')
-        },
+        }
     }
 </script>
