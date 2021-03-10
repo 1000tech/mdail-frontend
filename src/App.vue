@@ -1,3 +1,12 @@
+<script>
+    import Header from '@/Header'
+    export default {
+        components: {
+            Header
+        }
+    }
+</script>
+
 <template lang='pug'>
     main
         Header
@@ -21,7 +30,7 @@
         padding 0 20px 20px
         border-radius 10px 10px 0 0
         @media (min-width $lg)
-            padding 0 60px 60px
+            padding 0 60px 45px
             min-height 100%
             height 100vh
             overflow auto
@@ -48,15 +57,3 @@
             height 15px
             background linear-gradient($white,rgba(255,255,255,.3))
 </style>
-
-<script>
-    import Header from '@/Header'
-    export default {
-        components: {
-            Header
-        },
-        mounted() {
-            console.log('App mounted')
-        }
-    }
-</script>
