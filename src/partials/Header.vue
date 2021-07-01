@@ -1,21 +1,20 @@
 <template lang='pug'>
-    header
-        div
-            Logo
-            router-link(to='/')
-                i.i-bookmark
-                span Bookmarks
-            button
-                i.i-add
-                span Add Bookmark
-        div
-            button
-                i.i-night
-                span Dark Mode
-            router-link(to='/account').user
-                .user-avatar
-                span Account
-
+header
+    div
+        Logo
+        router-link(to='/')
+            i.i-bookmark
+            span Bookmarks
+        button
+            i.i-add
+            span Add Bookmark
+    div
+        button
+            i.i-night
+            span Dark Mode
+        router-link(to='/account').user
+            .user-avatar
+            span Account
 </template>
 
 <style lang='stylus'>

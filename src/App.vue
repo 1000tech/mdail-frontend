@@ -8,11 +8,11 @@
 </script>
 
 <template lang='pug'>
-    main
-        Header
-        article
-            transition
-                router-view
+main
+    Header
+    article
+        transition
+            router-view
 </template>
 
 <style lang='stylus'>

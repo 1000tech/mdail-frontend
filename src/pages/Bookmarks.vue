@@ -87,47 +87,47 @@
 </script>
 
 <template lang='pug'>
-    section
-        .title
-            h1
-                i.i-bookmark
-                span Bookmarks
+section
+    .title
+        h1
+            i.i-bookmark
+            span Bookmarks
 
-            BookmarkInput(
-                v-model='newItemText'
-                placeholder='Add new Bookmark'
-                @keydown.enter='addItem'
-            )
+        BookmarkInput(
+            v-model='newItemText'
+            placeholder='Add new Bookmark'
+            @keydown.enter='addItem'
+        )
 
-        Loading(v-if='loading')
+    Loading(v-if='loading')
 
-        ul(v-else-if='items.length')
-            BookmarkList(
-                v-for='item in items'
-                :item='item'
-                :key='item.id'
-                @remove='showDeleteModal(item.id)'
-            )
+    ul(v-else-if='items.length')
+        BookmarkList(
+            v-for='item in items'
+            :item='item'
+            :key='item.id'
+            @remove='showDeleteModal(item.id)'
+        )
 
-        Error(v-else-if='errored')
+    Error(v-else-if='errored')
 
-        p(v-else='')
-            | Add your first Bookmark
+    p(v-else='')
+        | Add your first Bookmark
 
-        transition(name='modal')
-            Modal(
-                v-if='isModalDeleteVisible'
-                @close='isModalDeleteVisible = false'
-            )
+    transition(name='modal')
+        Modal(
+            v-if='isModalDeleteVisible'
+            @close='isModalDeleteVisible = false'
+        )
 
-                template(#text)
-                    h2 Delete Bookmark
-                    p Are you sure you want to delete this Bookmark?
+            template(#text)
+                h2 Delete Bookmark
+                p Are you sure you want to delete this Bookmark?
 
-                template(#button)
-                    button(
-                        @click='removeItem(deleteItemId)')
-                        | Delete
+            template(#button)
+                button(
+                    @click='removeItem(deleteItemId)')
+                    | Delete
 </template>
 
 <style lang='stylus'>

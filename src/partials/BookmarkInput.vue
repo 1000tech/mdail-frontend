@@ -1,9 +1,9 @@
 <template lang='pug'>
-    input.add-bookmark(
-        type='text'
-        :value='value'
-        v-on='listeners'
-    )
+input.add-bookmark(
+    type='text'
+    :value='value'
+    v-on='listeners'
+)
 </template>
 
 <style lang='stylus'>

@@ -10,10 +10,10 @@
 </script>
 
 <template lang='pug'>
-    li
-        span {{item.title}}
-        button(@click="$emit('remove', item.id)")
-            | X
+li
+    span {{item.title}}
+    button(@click="$emit('remove', item.id)")
+        | X
 </template>
 
 <style lang='stylus'>

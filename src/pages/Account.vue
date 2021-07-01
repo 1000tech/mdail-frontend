@@ -1,9 +1,9 @@
 <template lang='pug'>
-    section
-        .title
-            h1
-                i.i-user
-                span Account
+section
+    .title
+        h1
+            i.i-user
+            span Account
 </template>
 
 <style lang='stylus'>

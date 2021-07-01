@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App'
-import './app.styl'
 import router from './router.js'
+
+import './app.styl'
 
 new Vue({
   el: '#app',

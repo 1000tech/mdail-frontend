@@ -36,19 +36,18 @@
 </script>
 
 <template lang='pug'>
-    .modal
-        .modal-backdrop(
-            @click="$emit('close')"
-        )
+.modal
+    .modal-backdrop(
+        @click="$emit('close')"
+    )
+    .modal-wrap(ref='draggableContainer')
+        .modal-content(@mousedown='dragMouseDown')
+            slot(name='text')
 
-        .modal-wrap(ref='draggableContainer')
-            .modal-content(@mousedown='dragMouseDown')
-                slot(name='text')
-
-                div(class='D(f) Ai(c) Jc(fe)')
-                    button(@click="$emit('close')")
-                        | Cancel
-                    slot(name='button')
+            div(class='D(f) Ai(c) Jc(fe)')
+                button(@click="$emit('close')")
+                    | Cancel
+                slot(name='button')
 </template>
 
 <style lang='stylus'>

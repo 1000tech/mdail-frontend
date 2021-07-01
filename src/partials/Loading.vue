@@ -1,5 +1,5 @@
 <template lang='pug'>
-    .load
+.load
 </template>
 
 <style lang='stylus'>
