@@ -3,11 +3,11 @@
 ## Prepare
 
 ```bash
-npm i
+yarn
 ```
 
 ## Development run
 
 ```bash
-npm run dev
+yarn dev
 ```

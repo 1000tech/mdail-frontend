@@ -2,9 +2,8 @@ const
     webpack = require('webpack'),
     path = require('path'),
     { VueLoaderPlugin } = require('vue-loader'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    IconFontPlugin = require('icon-font-loader').Plugin,
-    { CleanWebpackPlugin } = require('clean-webpack-plugin')
+    // IconFontPlugin = require('icon-font-loader').Plugin,
+    HtmlWebpackPlugin = require('html-webpack-plugin')
 
 require('dotenv').config()
 
@@ -12,6 +11,7 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/main.js'),
     output: {
+        path: path.resolve(__dirname, 'build'),
         filename: 'script.[hash].js',
         publicPath: process.env.APP_PATH
     },
@@ -48,7 +48,6 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'icon-font-loader'
                 ]
             },
             {
@@ -56,7 +55,6 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    'icon-font-loader',
                     'postcss-loader',
                     {
                         loader: 'stylus-loader',
@@ -77,15 +75,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new IconFontPlugin(),
+        // new IconFontPlugin(),
         new webpack.DefinePlugin({
             APP_URL: JSON.stringify(process.env.APP_URL),
             APP_PATH: JSON.stringify(process.env.APP_PATH)
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
             template: 'index.html'
         }),
         new webpack.LoaderOptionsPlugin({
