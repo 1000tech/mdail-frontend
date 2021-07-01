@@ -1,11 +1,7 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App'
-import router from './router.js'
+import router from './router'
 
 import './app.styl'
 
-new Vue({
-  el: '#app',
-  router,
-  render: h => h(App),
-})
+createApp(App).use(router).mount('#app')

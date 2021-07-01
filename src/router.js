@@ -1,7 +1,4 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
+import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
     {
@@ -13,14 +10,16 @@ const routes = [
         component: () => import('#/Account'),
     },
     {
-        path: '*',
+        path: "/:catchAll(.*)",
         component: () => import('#/404')
     }
 ]
 
-export default new Router({
-    mode: 'history',
+const Router = createRouter({
+    history: createWebHistory(),
     routes,
     linkActiveClass: '',
     linkExactActiveClass: 'active'
 })
+
+export default Router

@@ -45,14 +45,12 @@
 
             // Add Item
             addItem() {
-                let
-                    nextItemId,
-                    trimmedText = this.newItemText.trim()
+                let nextItemId
 
-                if (trimmedText) {
+                if (this.newItemText) {
                     this.items.push({
                         id: nextItemId++,
-                        title: trimmedText
+                        title: this.newItemText
                     })
                     this.newItemText = ''
                 }
@@ -94,7 +92,7 @@ section
             span Bookmarks
 
         BookmarkInput(
-            v-model='newItemText'
+            v-model.trim='newItemText'
             placeholder='Add new Bookmark'
             @keydown.enter='addItem'
         )

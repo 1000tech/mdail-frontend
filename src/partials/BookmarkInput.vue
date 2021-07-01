@@ -1,8 +1,8 @@
 <template lang='pug'>
 input.add-bookmark(
     type='text'
-    :value='value'
-    v-on='listeners'
+    :value='modelValue'
+    @input="$emit('update:modelValue', $event.target.value)"
 )
 </template>
 
@@ -21,19 +21,9 @@ input.add-bookmark(
 <script>
     export default {
         props: {
-            value: {
+            modelValue: {
                 type: String,
                 default: '',
-            }
-        },
-        computed: {
-            listeners() {
-                return {
-                    // Pass all component listeners directly to input
-                    ...this.$listeners,
-                    // Override input listener to work with v-model
-                    input: event => this.$emit('input', event.target.value)
-                }
             }
         }
     }
