@@ -48,6 +48,7 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
+                    // 'icon-font-loader',
                 ]
             },
             {
@@ -55,6 +56,7 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
+                    // 'icon-font-loader',
                     'postcss-loader',
                     {
                         loader: 'stylus-loader',

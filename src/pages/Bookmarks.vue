@@ -1,87 +1,81 @@
 <script>
-    import Loading from '@/Loading'
-    import Error from '@/Error'
-    import Modal from '@/Modal'
-    import BookmarkInput from '@/BookmarkInput'
-    import BookmarkList from '@/BookmarkList'
+import Loading from '@/Loading'
+import Error from '@/Error'
+import Modal from '@/Modal'
+import BookmarkInput from '@/BookmarkInput'
+import BookmarkList from '@/BookmarkList'
 
-    export default {
-        components: {
-            Loading,
-            Error,
-            Modal,
-            BookmarkInput,
-            BookmarkList,
+export default {
+    components: {
+        Loading,
+        Error,
+        Modal,
+        BookmarkInput,
+        BookmarkList,
+    },
+    data() {
+        return {
+            isModalDeleteVisible: false,
+            deleteItemId: null,
+            newItemText: '',
+            loading: true,
+            errored: false,
+            items: [],
+        }
+    },
+    created() {
+        fetch(APP_URL + 'bookmarks')
+            .then(res => res.json())
+            .then(res => this.items = res.items)
+            .catch(error => this.errored = true)
+            .finally(() => this.loading = false)
+    },
+    methods: {
+        // Modal
+        showDeleteModal(id) {
+            this.deleteItemId = id
+            this.isModalDeleteVisible = true
         },
-        data() {
-            return {
-                isModalDeleteVisible: false,
-                deleteItemId: null,
-                newItemText: '',
-                loading: true,
-                errored: false,
-                items: [],
-            }
-        },
-        created() {
-            fetch(APP_URL + 'bookmarks')
-                .then(res => res.json())
-                .then(res => {
-                    this.items = res.items
+
+        // Add Item
+        addItem() {
+            let nextItemId
+
+            if (this.newItemText) {
+                this.items.push({
+                    id: nextItemId++,
+                    title: this.newItemText
                 })
-                .catch(error =>
-                    this.errored = true
-                )
-                .finally(() =>
-                    this.loading = false
-                )
-        },
-        methods: {
-            // Modal
-            showDeleteModal(id) {
-                this.deleteItemId = id
-                this.isModalDeleteVisible = true
-            },
-
-            // Add Item
-            addItem() {
-                let nextItemId
-
-                if (this.newItemText) {
-                    this.items.push({
-                        id: nextItemId++,
-                        title: this.newItemText
-                    })
-                    this.newItemText = ''
-                }
-            },
-
-            // Remove Item
-            removeItem(idToRemove) {
-                this.items = this.items.filter(item => item.id !== idToRemove)
-                this.isModalDeleteVisible = false
+                this.newItemText = ''
             }
         },
-        computed: {
-            filteredList() {
-                let title = this.title
 
-                if (this.sortBy && title === '') {
-                    this.sortBy = false
-                    return this.items.reverse()
-                } else {
-                    return this.items.filter(elem => {
-                        if (title === '') {
-                            return true
-                        }
-                        else {
-                            return elem.title.toLowerCase().indexOf(title.toLowerCase()) > -1
-                        }
-                    })
-                }
+        // Remove Item
+        removeItem(idToRemove) {
+            this.items = this.items.filter(item => item.id !== idToRemove)
+            this.isModalDeleteVisible = false
+        }
+    },
+    computed: {
+        filteredList() {
+            let title = this.title
+
+            if (this.sortBy && title === '') {
+                this.sortBy = false
+                return this.items.reverse()
+            } else {
+                return this.items.filter(elem => {
+                    if (title === '') {
+                        return true
+                    }
+                    else {
+                        return elem.title.toLowerCase().indexOf(title.toLowerCase()) > -1
+                    }
+                })
             }
         }
     }
+}
 </script>
 
 <template lang='pug'>

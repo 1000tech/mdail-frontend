@@ -1,3 +1,12 @@
+<script>
+// import Logo from './Logo'
+export default {
+    // components: {
+    //     Logo
+    // }
+}
+</script>
+
 <template lang='pug'>
 section
     .title
@@ -9,12 +18,3 @@ section
 <style lang='stylus'>
 
 </style>
-
-<script>
-    // import Logo from './Logo'
-    export default {
-        // components: {
-        //     Logo
-        // }
-    }
-</script>

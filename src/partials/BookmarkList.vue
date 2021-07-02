@@ -1,12 +1,12 @@
 <script>
-    export default {
-        props: {
-            item: {
-                type: Object,
-                required: true
-            }
+export default {
+    props: {
+        item: {
+            type: Object,
+            required: true
         }
     }
+}
 </script>
 
 <template lang='pug'>
@@ -17,10 +17,10 @@ li
 </template>
 
 <style lang='stylus'>
-    ul
-        padding 0 12px
-    li
-        display flex
-        align-items center
-        height 50px
+ul
+    padding 0 12px
+li
+    display flex
+    align-items center
+    height 50px
 </style>
