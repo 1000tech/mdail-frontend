@@ -6,7 +6,7 @@
 <style lang='stylus'>
     .error
         background palevioletred
-        border-radius 10px
+        border-radius 7px
         padding 14px 20px
         margin 15px auto
         max-width $xl

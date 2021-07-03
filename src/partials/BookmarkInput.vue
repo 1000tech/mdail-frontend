@@ -10,7 +10,8 @@ export default {
 </script>
 
 <template lang='pug'>
-input.add-bookmark(
+input.field(
+    class='Mt(15px)'
     type='text'
     :value='modelValue'
     @input="$emit('update:modelValue', $event.target.value)"
@@ -18,13 +19,5 @@ input.add-bookmark(
 </template>
 
 <style lang='stylus'>
-.add-bookmark
-    height 50px
-    margin 17px 0 0
-    padding 8px 12px
-    border-radius 10px
-    background $grey
-    transition background $time
-    &:hover, &:focus
-        background $dark-grey
+
 </style>

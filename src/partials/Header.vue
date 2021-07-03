@@ -80,7 +80,7 @@ header
                 display none
         @media (min-width $lg)
             width 100%
-            border-radius 10px
+            border-radius 7px
             font 700 18px/40px 'R'
             padding 0 15px
             margin 12px 0

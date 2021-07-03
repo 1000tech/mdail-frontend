@@ -39,4 +39,32 @@ article
 section
     max-width $lg
     margin auto
+
+.field
+    font-size 16px
+    height 46px
+    padding 8px 12px
+    border-radius 7px
+    border 1px solid $light-grey
+    border-top-color $grey
+    color $dark-grey
+    transition box-shadow $time
+    &:focus, &:focus-within
+        box-shadow 0 1px 1px 0 $shadow
+
+.btn
+    font-weight 600
+    letter-spacing 1px
+    border-radius 7px
+    padding 9px 24px 10px
+    background $blue
+    color $white
+    &-empty
+        background $grey
+        color $blue
+    &:hover
+        background $blue-hover
+        color $white
+    &:active
+        background $blue-active
 </style>

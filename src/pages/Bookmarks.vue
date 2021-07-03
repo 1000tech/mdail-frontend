@@ -119,8 +119,7 @@ section
                 h2 Delete Bookmark
                 p Are you sure you want to delete this Bookmark?
             template(#button)
-                button(
-                    @click='removeItem(deleteItemId)')
+                button(class='btn' @click='removeItem(deleteItemId)')
                     | Delete
 </template>
 

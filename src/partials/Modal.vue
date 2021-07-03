@@ -43,7 +43,7 @@ export default {
             slot(name='text')
 
             div(class='D(f) Ai(c) Jc(fe)')
-                button(@click="$emit('close')")
+                button(class='btn btn-empty' @click="$emit('close')")
                     | Cancel
                 slot(name='button')
 </template>
@@ -82,7 +82,7 @@ export default {
     max-width 500px
     margin auto
     padding 30px 35px 35px
-    border-radius 5px
+    border-radius 7px
     background $white
     box-shadow 0 2px 16px 0 $shadow
     cursor grab
@@ -91,20 +91,6 @@ export default {
     p
         margin 15px 0 25px
     button
-        font-weight 600
-        letter-spacing 1px
-        border-radius 5px
-        padding 10px 24px
-        &:first-child
-            background $grey
-            color $blue
         &:last-child
-            background $blue
-            color $white
             margin 0 0 0 20px
-        &:hover
-            background $blue-hover
-            color $white
-        &:active
-            background $blue-active
 </style>
