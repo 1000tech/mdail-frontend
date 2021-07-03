@@ -14,6 +14,8 @@ li
     span {{item.title}}
     button(@click="$emit('remove', item.id)")
         | X
+    router-link(:to='`/edit/${item.id}`')
+        | Edit
 </template>
 
 <style lang='stylus'>

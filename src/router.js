@@ -19,7 +19,7 @@ const routes = [
     {
         name: 'Edit Bookmark',
         path: '/edit/:id',
-        // component: () => import('#/Edit'),
+        component: () => import('#/Edit'),
     },
     {
         name: '404 – Not Found',
