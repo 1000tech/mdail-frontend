@@ -1,7 +1,13 @@
 import { createApp } from 'vue'
 import App from './App'
+
 import router from './router'
+import mixin from './mixin'
 
 import './app.styl'
 
-createApp(App).use(router).mount('#app')
+const Vue = createApp(App)
+
+Vue.use(router)
+Vue.mixin(mixin)
+Vue.mount('#app')

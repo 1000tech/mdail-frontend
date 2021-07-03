@@ -1,4 +1,5 @@
 <script>
+import Title from '@/Title'
 import Loading from '@/Loading'
 import Error from '@/Error'
 import Modal from '@/Modal'
@@ -7,6 +8,7 @@ import BookmarkList from '@/BookmarkList'
 
 export default {
     components: {
+        Title,
         Loading,
         Error,
         Modal,
@@ -86,11 +88,7 @@ export default {
 
 <template lang='pug'>
 section
-    .title
-        h1
-            i.i-bookmark
-            span Bookmarks
-
+    Title
         BookmarkInput(
             v-model.trim='newBookmark'
             placeholder='Add new Bookmark'
@@ -117,11 +115,9 @@ section
             v-if='isModalDeleteVisible'
             @close='isModalDeleteVisible = false'
         )
-
             template(#text)
                 h2 Delete Bookmark
                 p Are you sure you want to delete this Bookmark?
-
             template(#button)
                 button(
                     @click='removeItem(deleteItemId)')

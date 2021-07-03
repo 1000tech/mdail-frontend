@@ -32,7 +32,7 @@ header
         router-link(to='/' @click='wave')
             i.i-bookmark
             span Bookmarks
-        button(@click='wave')
+        router-link(to='/add' @click='wave')
             i.i-add
             span Add Bookmark
     nav

@@ -1,13 +1,18 @@
+<script>
+import Title from '@/Title'
+
+export default {
+    components: {
+        Title,
+    },
+}
+</script>
+
 <template lang='pug'>
-article
-    .title
-        h1 404
+section
+    Title
 </template>
 
 <style lang='stylus'>
 
 </style>
-
-<script>
-
-</script>

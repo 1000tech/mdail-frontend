@@ -1,18 +1,15 @@
 <script>
-// import Logo from './Logo'
+import Title from '@/Title'
 export default {
-    // components: {
-    //     Logo
-    // }
+    components: {
+        Title
+    }
 }
 </script>
 
 <template lang='pug'>
 section
-    .title
-        h1
-            i.i-user
-            span Account
+    Title
 </template>
 
 <style lang='stylus'>

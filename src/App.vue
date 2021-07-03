@@ -12,8 +12,7 @@ main
     Header
     article
         router-view(v-slot='{ Component }')
-            keep-alive
-                component(:is='Component')
+            component(:is='Component')
 </template>
 
 <style lang='stylus'>
@@ -40,21 +39,4 @@ article
 section
     max-width $lg
     margin auto
-
-.title
-    position sticky
-    top 0
-    background $white
-    padding 20px 0 0
-    @media (min-width $lg)
-        padding 40px 0 0
-    &:after
-        content ''
-        position absolute
-        z-index 1
-        left 0
-        right 0
-        bottom -15px
-        height 15px
-        background linear-gradient($white,rgba(255,255,255,.3))
 </style>
