@@ -17,14 +17,14 @@ export default {
         return {
             isModalDeleteVisible: false,
             deleteItemId: null,
-            newItemText: '',
+            newBookmark: '',
             loading: true,
             errored: false,
             items: [],
         }
     },
     created() {
-        fetch(APP_URL + 'bookmarks')
+        fetch(APP_API_URL)
             .then(res => res.json())
             .then(res => this.items = res.items)
             .catch(error => this.errored = true)
@@ -41,19 +41,25 @@ export default {
         addItem() {
             let nextItemId
 
-            if (this.newItemText) {
-                this.items.push({
-                    id: nextItemId++,
-                    title: this.newItemText
-                })
-                this.newItemText = ''
-            }
+            this.items.push({
+                id: nextItemId++,
+                title: this.newBookmark
+            })
+            this.newBookmark = ''
         },
 
         // Remove Item
-        removeItem(idToRemove) {
-            this.items = this.items.filter(item => item.id !== idToRemove)
+        removeItem(id) {
+            this.items = this.items.filter(item => item.id !== id)
             this.isModalDeleteVisible = false
+        },
+
+        searchItems() {
+            const name = this.name.toLowerCase()
+
+            return this.items.filter(el =>
+                el.title.toLowerCase().includes(name)
+            )
         }
     },
     computed: {
@@ -86,7 +92,7 @@ section
             span Bookmarks
 
         BookmarkInput(
-            v-model.trim='newItemText'
+            v-model.trim='newBookmark'
             placeholder='Add new Bookmark'
             @keydown.enter='addItem'
         )

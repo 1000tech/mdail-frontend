@@ -37,9 +37,7 @@ export default {
 
 <template lang='pug'>
 .modal
-    .modal-backdrop(
-        @click="$emit('close')"
-    )
+    .modal-backdrop(@click="$emit('close')")
     .modal-wrap(ref='draggableContainer')
         .modal-content(@mousedown='dragMouseDown')
             slot(name='text')
@@ -54,7 +52,7 @@ export default {
 .modal-enter-active, .modal-leave-active
     transition opacity $time
 
-.modal-enter, .modal-leave-to
+.modal-enter-from, .modal-leave-to
     opacity 0
     transition opacity $time
 

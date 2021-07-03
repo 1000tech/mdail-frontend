@@ -1,6 +1,7 @@
 <template lang='pug'>
 article
-    h1 404
+    .title
+        h1 404
 </template>
 
 <style lang='stylus'>

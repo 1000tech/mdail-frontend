@@ -11,8 +11,9 @@ export default {
 main
     Header
     article
-        transition
-            router-view
+        router-view(v-slot='{ Component }')
+            keep-alive
+                component(:is='Component')
 </template>
 
 <style lang='stylus'>

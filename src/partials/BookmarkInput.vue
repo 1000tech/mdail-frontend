@@ -22,7 +22,7 @@ input.add-bookmark(
     height 50px
     margin 17px 0 0
     padding 8px 12px
-    border-radius 7px
+    border-radius 10px
     background $grey
     transition background $time
     &:hover, &:focus

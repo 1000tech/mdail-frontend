@@ -3,6 +3,24 @@ import Logo from '@/Logo'
 export default {
     components: {
         Logo
+    },
+    methods: {
+        // Wave effect
+        wave(e) {
+            const
+                size = Math.max(e.target.offsetWidth, e.target.offsetHeight),
+                x = e.offsetX - size / 2,
+                y = e.offsetY - size / 2,
+                wave = document.createElement('span')
+
+            // Create a new wave
+            wave.className = 'wave'
+            wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
+            e.target.appendChild(wave)
+
+            // Remove element after animation ends
+            setTimeout(() => wave.remove(), 500)
+        }
     }
 }
 </script>
@@ -10,18 +28,18 @@ export default {
 <template lang='pug'>
 header
     nav
-        Logo
-        router-link(to='/')
+        //Logo
+        router-link(to='/' @click='wave')
             i.i-bookmark
             span Bookmarks
-        button
+        button(@click='wave')
             i.i-add
             span Add Bookmark
     nav
-        button
+        button(@click='wave')
             i.i-night
             span Dark Mode
-        router-link(to='/account').user
+        router-link(to='/account' @click='wave').user
             .user-avatar
             span Account
 </template>
@@ -51,19 +69,18 @@ header
         font-size 22px
         border-radius 50%
         letter-spacing 1px
-        &.active
-            pointer-events none
+        user-select none
+        position relative
+        overflow hidden
         &:hover, &.active
             background $blue-hover
-        &:active
-            background $blue-active
         @media (max-width $lg)
             justify-content center
             span
                 display none
         @media (min-width $lg)
             width 100%
-            border-radius 5px
+            border-radius 10px
             font 700 18px/40px 'R'
             padding 0 15px
             margin 12px 0
@@ -79,4 +96,19 @@ header
     height 40px
     border-radius 50%
     background $grey
+
+.wave
+    background rgba(255,255,255,.1)
+    border-radius 50%
+    transform scale(0)
+    animation wave .5s linear
+    pointer-events none
+    position absolute
+
+@keyframes wave {
+    100% {
+        transform scale(2)
+        opacity 0
+    }
+}
 </style>
