@@ -1,4 +1,6 @@
 <script>
+import { regExp } from '../js/utils'
+
 export default {
     props: {
         list: {
@@ -21,20 +23,20 @@ export default {
             }
         },
         submit() {
+            this.tag = this.tag.replace(regExp.tag, '')
+            this.tag = this.tag.replace(regExp.emoji, '')
             if (!this.tag) return
-            if (this.tag === ',') {
-                this.tag = ''
-                return
-            }
-            this.tag = this.tag.replace(',', '')
-            const isNotExist = this.list.every(item => {
-                return item !== this.tag;
+
+            const tags = this.tag.split(/[ ,]+/)
+
+            tags.some(el => {
+                if (!this.list.includes(el)) {
+                    this.list.push(el)
+                }
             })
-            if (isNotExist) {
-                this.list.push(this.tag.replace(',', ''))
-                this.tag = ''
-            }
-            this.$emit('change',this.list)
+
+            this.tag = ''
+            this.$emit('change', this.list)
         }
     }
 }

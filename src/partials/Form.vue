@@ -11,11 +11,6 @@ export default {
             default: () => ({})
         }
     },
-    data() {
-        return{
-            list: ['tag1','tag2']
-        }
-    },
     methods: {
         postItem() {
             let uri
@@ -38,8 +33,6 @@ export default {
 
 <template lang='pug'>
 div
-    .p-2
-        Tags(:list="list")
     form.card(@submit.prevent='postItem')
         .p-2
             label Title:
@@ -47,6 +40,8 @@ div
         .p-2
             label URL:
             input.field(type='text' v-model='item.url' minlength='4' maxlength='255' required='')
+        .p-2
+            Tags(v-model='item.tags' :list='item.tags')
         div(class='D(f) Ai(c) Jc(fe)')
             button.btn(type='submit')
                 | Save
