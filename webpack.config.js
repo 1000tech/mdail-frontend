@@ -91,7 +91,7 @@ module.exports = {
                 stylus: {
                     import: [
                         path.resolve(__dirname, './src/styles/vars.styl'),
-                        path.resolve(__dirname, './src/styles/func.styl')
+                        path.resolve(__dirname, './src/styles/mixin.styl')
                     ]
                 }
             }

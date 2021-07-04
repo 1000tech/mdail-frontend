@@ -32,14 +32,32 @@ export default {
 <template lang='pug'>
 div
     form.card(@submit.prevent='postItem')
-        .p-2
-            label Title:
-            input.field(type='text' v-model='item.title' minlength='1' maxlength='255' required='')
-        .p-2
-            label URL:
-            input.field(type='text' v-model='item.url' minlength='4' maxlength='255' required='')
-        .p-2
+        div(class='My(15px)')
+            input.field(
+                type='text'
+                placeholder='Title'
+                v-model='item.title'
+                maxlength='255'
+                required=''
+            )
+        div(class='My(15px)')
+            input.field(
+                type='text'
+                placeholder='URL'
+                v-model='item.url'
+                maxlength='255'
+                minlength='4'
+                required=''
+            )
+        div(class='My(15px)')
             Tags(:list='item.tags')
+        div(class='My(15px)')
+            textarea.field(
+                class='Mih(100px) Py(15px)'
+                placeholder='Description'
+                v-model='item.desc'
+                maxlength='255'
+            )
         div(class='D(f) Ai(c) Jc(fe)')
             button.btn(type='submit')
                 | Save

@@ -43,8 +43,8 @@ section
 
 .field
     font-size 16px
-    height 46px
-    padding 8px 12px
+    min-height 46px
+    padding 4px 12px
     border-radius 7px
     border 1px solid $light-grey
     border-top-color $grey

@@ -43,28 +43,37 @@ export default {
 </script>
 
 <template lang='pug'>
-.field
-    div(class='D(f) Ai(c)')
-        button.tag(v-for='(item, index) in list' :key='index' @click='remove(index)')
-            i.tag-close
-            span.tag-text {{ item }}
-        input.tag-input(
-            type='text'
-            v-model.trim='tag'
-            @keydown.delete='removeTag(list.length-1)'
-            @keydown.space='submit'
-        )
+.field(class='D(f) Ai(c) Flw(w)')
+    button.tag(
+        type='button'
+        v-for='(item, index) in list'
+        :key='index'
+        @click='remove(index)'
+    )
+        i.tag-close
+        span.tag-text {{ item }}
+    input.tag-input(
+        class='H(28px) W(a) Flxg(1) My(4px)'
+        type='text'
+        placeholder='Tags'
+        v-model.trim='tag'
+        @keydown.delete='removeTag(list.length-1)'
+        @keydown.space='submit'
+    )
 </template>
 
 <style lang='stylus'>
 .tag
+    height 28px
+    padding 2px 8px 4px
+    margin 4px 8px 4px 0
     background #ecf5ff
     border-radius 5px
     border 1px solid #d9ecff
-    padding 1px 8px 3px
-    margin 0 6px 0 0
     color #409eff
     white-space nowrap
+    &:hover
+        background #d9ecff
 
 .tag-close
     background-color #c0c4cc
@@ -72,8 +81,7 @@ export default {
     color #909399
 
 .tag-text
+    ellipsis()
+    max-width 200px
     color #909399
-
-.tag-input
-    height 28px
 </style>

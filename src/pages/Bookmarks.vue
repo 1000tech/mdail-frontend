@@ -37,27 +37,22 @@ export default {
             this.deleteItemId = id
             this.isModalDeleteVisible = true
         },
-
         // Add Item
         addItem() {
             let nextItemId
-
             this.items.push({
                 id: nextItemId++,
                 title: this.newBookmark
             })
             this.newBookmark = ''
         },
-
         // Remove Item
         removeItem(id) {
             this.items = this.items.filter(item => item.id !== id)
             this.isModalDeleteVisible = false
         },
-
         searchItems() {
             const name = this.name.toLowerCase()
-
             return this.items.filter(el =>
                 el.title.toLowerCase().includes(name)
             )
