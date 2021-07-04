@@ -17,15 +17,13 @@ export default {
 
             if (this.$route.params.id) { // is existing item
                 uri = `${APP_API_URL}/${this.$route.params.id}`
-                return this.put(uri, this.item).then(() =>
-                    this.$router.push({ path: '/' })
-                )
+                return this.put(uri, this.item)
+                    .then(() => this.$router.push({ path: '/' }))
             }
 
             uri = APP_API_URL
-            this.post(uri, this.item).then(() =>
-                this.$router.push({ path: '/' })
-            )
+            this.post(uri, this.item)
+                .then(() => this.$router.push({ path: '/' }))
         }
     }
 }

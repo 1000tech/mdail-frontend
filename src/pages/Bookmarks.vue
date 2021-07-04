@@ -26,8 +26,7 @@ export default {
         }
     },
     created() {
-        fetch(APP_API_URL)
-            .then(res => res.json())
+        this.get(APP_API_URL)
             .then(res => this.items = res.items)
             .catch(error => this.errored = true)
             .finally(() => this.loading = false)
