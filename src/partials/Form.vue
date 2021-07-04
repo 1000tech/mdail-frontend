@@ -41,7 +41,7 @@ div
             label URL:
             input.field(type='text' v-model='item.url' minlength='4' maxlength='255' required='')
         .p-2
-            Tags(v-model='item.tags' :list='item.tags')
+            Tags(:list='item.tags')
         div(class='D(f) Ai(c) Jc(fe)')
             button.btn(type='submit')
                 | Save
