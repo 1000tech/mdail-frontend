@@ -22,7 +22,9 @@ export default {
                 this.list.splice(index, 1)
             }
         },
-        submit() {
+        submit(e) {
+            e.preventDefault()
+
             this.tag = this.tag.replace(regExp.tag, '')
             this.tag = this.tag.replace(regExp.emoji, '')
             if (!this.tag) return
@@ -30,7 +32,7 @@ export default {
             const tags = this.tag.split(/[ ,]+/)
 
             tags.some(el => {
-                if (!this.list.includes(el)) {
+                if (el.length > 0 && !this.list.includes(el)) {
                     this.list.push(el)
                 }
             })
@@ -59,6 +61,7 @@ export default {
         v-model.trim='tag'
         @keydown.delete='removeTag(list.length-1)'
         @keydown.space='submit'
+        @keydown.enter='submit'
         @blur='submit'
     )
 </template>

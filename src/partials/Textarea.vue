@@ -8,7 +8,6 @@ export default {
     },
     watch: {
         modelValue() {
-            console.log(`${this.$el.scrollHeight}px`)
             this.$nextTick(() => {
                 this.$el.style.height = `${this.$el.scrollHeight}px`
             })
