@@ -14,16 +14,19 @@ export default {
         }
     },
     methods: {
-        remove(index) {
-            this.list.splice(index, 1)
+        remove(i) {
+            this.list.splice(i, 1)
         },
-        removeTag(index) {
+        edit(i) {
             if (this.tag === '') {
-                this.list.splice(index, 1)
+                event.preventDefault()
+
+                this.tag = this.list[i]
+                this.list.splice(i, 1)
             }
         },
-        submit(e) {
-            e.preventDefault()
+        submit() {
+            event.preventDefault()
 
             this.tag = this.tag.replace(regExp.tag, '')
             this.tag = this.tag.replace(regExp.emoji, '')
@@ -48,9 +51,9 @@ export default {
 .field(class='D(f) Ai(c) Flw(w)')
     button.tag(
         type='button'
-        v-for='(item, index) in list'
-        :key='index'
-        @click='remove(index)'
+        v-for='(item, i) in list'
+        :key='i'
+        @click='remove(i)'
     )
         i.tag-close
         span.tag-text {{ item }}
@@ -59,9 +62,10 @@ export default {
         type='text'
         placeholder='Tags'
         v-model.trim='tag'
-        @keydown.delete='removeTag(list.length-1)'
+        @keydown.delete='edit(list.length - 1)'
         @keydown.space='submit'
         @keydown.enter='submit'
+        @keydown.188='submit'
         @blur='submit'
     )
 </template>

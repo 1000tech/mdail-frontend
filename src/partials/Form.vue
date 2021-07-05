@@ -37,7 +37,7 @@ div
         div(class='My(15px)')
             input.field(
                 type='text'
-                placeholder='Title'
+                placeholder='Title*'
                 v-model.trim='item.title'
                 maxlength='255'
                 required=''
@@ -45,7 +45,7 @@ div
         div(class='My(15px)')
             input.field(
                 type='text'
-                placeholder='URL'
+                placeholder='URL*'
                 v-model.trim='item.url'
                 maxlength='255'
                 minlength='4'
