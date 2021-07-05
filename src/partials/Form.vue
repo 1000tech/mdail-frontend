@@ -1,9 +1,11 @@
 <script>
 import Tags from '@/Tags'
+import Textarea from '@/Textarea'
 
 export default {
     components: {
         Tags,
+        Textarea,
     },
     props: {
         item: {
@@ -36,7 +38,7 @@ div
             input.field(
                 type='text'
                 placeholder='Title'
-                v-model='item.title'
+                v-model.trim='item.title'
                 maxlength='255'
                 required=''
             )
@@ -44,7 +46,7 @@ div
             input.field(
                 type='text'
                 placeholder='URL'
-                v-model='item.url'
+                v-model.trim='item.url'
                 maxlength='255'
                 minlength='4'
                 required=''
@@ -52,11 +54,10 @@ div
         div(class='My(15px)')
             Tags(:list='item.tags')
         div(class='My(15px)')
-            textarea.field(
-                class='Mih(100px) Py(12px)'
+            Textarea.field(
+                class='Mih(100px) Py(12px) Ov(h)'
                 placeholder='Description'
-                v-model='item.desc'
-                maxlength='255'
+                v-model.trim='item.desc'
             )
         div(class='D(f) Ai(c) Jc(fe)')
             button.btn(type='submit')
