@@ -53,7 +53,7 @@ div
             Tags(:list='item.tags')
         div(class='My(15px)')
             textarea.field(
-                class='Mih(100px) Py(15px)'
+                class='Mih(100px) Py(12px)'
                 placeholder='Description'
                 v-model='item.desc'
                 maxlength='255'

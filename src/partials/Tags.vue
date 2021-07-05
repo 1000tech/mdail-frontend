@@ -59,12 +59,14 @@ export default {
         v-model.trim='tag'
         @keydown.delete='removeTag(list.length-1)'
         @keydown.space='submit'
+        @blur='submit'
     )
 </template>
 
 <style lang='stylus'>
 .tag
     height 28px
+    line-height 20px
     padding 2px 8px 4px
     margin 4px 8px 4px 0
     background #ecf5ff

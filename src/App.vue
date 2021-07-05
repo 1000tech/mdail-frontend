@@ -1,5 +1,10 @@
 <script>
 import Header from '@/Header'
+import i18n from './js/i18n'
+
+console.log(
+    i18n.t('validation.required')
+);
 
 export default {
     components: {
