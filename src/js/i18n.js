@@ -13,7 +13,9 @@ class polyglot {
 
   t(key, count, emptyState) {
     if (count === 0 && emptyState) {
-      return `No ${this.polyglot.t(key, count).replace(count, '').trim()} found`;
+      const phrase = this.polyglot.t(key, count).replace(count, '').trim();
+
+      return this.polyglot.t('emptyState', { phrase });
     }
     return this.polyglot.t(key, count);
   }
