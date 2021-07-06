@@ -24,15 +24,15 @@ const routes = [
     {
         name: '404 – Not Found',
         path: '/:catchAll(.*)',
-        component: () => import('#/404')
-    }
+        component: () => import('#/404'),
+    },
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
     linkActiveClass: '',
-    linkExactActiveClass: 'active'
+    linkExactActiveClass: 'active',
 })
 
 export default router
