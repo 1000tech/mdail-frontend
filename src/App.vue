@@ -3,7 +3,7 @@ import Header from '@/Header'
 import i18n from './js/i18n'
 
 console.log(
-    i18n.t('look.count', 0, true)
+    i18n.t('item.bookmark', 5)
 );
 
 export default {
