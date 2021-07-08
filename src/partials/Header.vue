@@ -1,5 +1,6 @@
 <script>
 import Logo from '@/Logo'
+
 export default {
     components: {
         Logo
@@ -32,6 +33,7 @@ header
         router-link(to='/' @click='wave')
             i.i-bookmark
             span Bookmarks
+            //span Bookmarks
         router-link(to='/add' @click='wave')
             i.i-add
             span Add Bookmark

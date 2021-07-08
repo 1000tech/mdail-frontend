@@ -1,14 +1,11 @@
 import Polyglot from 'polyglot.js'
-import localeEn from '../locales/en'
 
 class polyglot {
-    constructor(locale = 'en') {
-        this.polyglot = {
-            en: new Polyglot({
-                phrases: localeEn,
-                locale: 'en',
-            }),
-        }[locale]
+    constructor(locale, phrases) {
+        this.polyglot = new Polyglot({
+            locale,
+            phrases,
+        })
     }
 
     t(key, count, emptyState) {
@@ -21,6 +18,10 @@ class polyglot {
     }
 }
 
-const i18n = new polyglot()
+const locale = navigator.language.slice(0, 2) === ('en' && 'ru') ? navigator.language.slice(0, 2) : 'en'
+
+const i18n = (key, count, emptyState) => import('../locales/' + locale).then(phrases => {
+    return new polyglot(locale, phrases.default).t(key, count, emptyState)
+})
 
 export default i18n
