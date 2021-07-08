@@ -9,18 +9,16 @@ export const i18n = createI18n({
 
 const loadedLanguages = ['en']
 
-export const languagesAvailable = ['en', 'fr', 'ru']
+export const languagesAvailable = ['en', 'ru']
 
-function setI18nLanguage (lang) {
-    i18n.locale = lang
-    document.querySelector('html').setAttribute('lang', lang)
-    return lang
+function setI18nLanguage(lang) {
+    i18n.global.locale = lang
 }
 
-export function navigatorCloseLanguage () {
-    const locale = navigator.language.slice(0, 2) || 'en'
-    if (languagesAvailable.includes(locale)) {
-        return loadLanguageAsync(locale)
+export function navigatorCloseLanguage() {
+    const lang = navigator.language.slice(0, 2) || 'en'
+    if (languagesAvailable.includes(lang)) {
+        return loadLanguageAsync(lang)
     }
     return 'en'
 }
@@ -28,7 +26,7 @@ export function navigatorCloseLanguage () {
 export function loadLanguageAsync (lang) {
     if (i18n.locale !== lang) {
         if (!loadedLanguages.includes(lang)) {
-            return import(/* webpackChunkName: "lang-[request]" */ `../locales/${lang}`).then(msgs => {
+            return import(`../locales/${lang}`).then(msgs => {
                 i18n.global.setLocaleMessage(lang, msgs.default)
                 loadedLanguages.push(lang)
                 return setI18nLanguage(lang)
