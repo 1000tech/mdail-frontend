@@ -19,7 +19,7 @@ module.exports = {
         historyApiFallback: true,
     },
     resolve: {
-        extensions: ['.js', '.vue'],
+        extensions: ['.vue', '.js', '.json'],
         alias: {
             '#': path.resolve(__dirname, './src/pages'),
             '@': path.resolve(__dirname, './src/partials')

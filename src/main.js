@@ -3,7 +3,7 @@ import App from './App'
 
 import router from './router'
 import mixin from './mixin'
-import i18n from './js/i18n'
+import { i18n } from './js/i18n'
 
 import './app.styl'
 
