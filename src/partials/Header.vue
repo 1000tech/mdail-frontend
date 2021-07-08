@@ -40,7 +40,7 @@ header
     nav
         button(@click='wave')
             i.i-night
-            span Dark Mode
+            span {{ $t('nav.darkMode') }}
         router-link(to='/account' @click='wave').user
             .user-avatar
             span {{ $t('page.account.title') }}

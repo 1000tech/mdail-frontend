@@ -1,6 +1,6 @@
 <script>
 import Title from '@/Title'
-import { listLocales, loadLocale, getUserLocale } from '../js/i18n'
+import { listLocales, loadLocale } from '../js/i18n'
 
 export default {
     components: {
@@ -8,11 +8,8 @@ export default {
     },
     data() {
         return {
-            listLocales
+            listLocales,
         }
-    },
-    created() {
-        getUserLocale()
     },
     methods: {
         changeLang(lang) {
@@ -26,8 +23,8 @@ export default {
 section
     Title
     p {{ $i18n.locale }}
-    button(v-for='(lang, index) in listLocales' :key='index' @click='changeLang(lang)') {{ lang }}
-
+    button(v-for='(lang, index) in listLocales' :key='index' @click='changeLang(lang)')
+        | {{ lang }}
 </template>
 
 <style lang='stylus'>

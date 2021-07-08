@@ -1,10 +1,14 @@
 <script>
 import Header from '@/Header'
+import { getLocale } from './js/i18n'
 
 export default {
     components: {
         Header
-    }
+    },
+    created() {
+        getLocale()
+    },
 }
 </script>
 
