@@ -1,8 +1,5 @@
 <script>
 import Header from '@/Header'
-import i18n from './js/i18n'
-
-console.log(i18n('item.bookmark', 5).then(t => t))
 
 export default {
     components: {

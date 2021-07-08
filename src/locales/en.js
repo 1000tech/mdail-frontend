@@ -1,4 +1,9 @@
-const localeEn = {
+const messages = {
+    en: {
+        item: {
+            bookmark: '{count} Bookmark | {count} Bookmarks',
+        },
+    },
     page: {
         home: {
             title: 'Bookmarks',
@@ -17,7 +22,7 @@ const localeEn = {
         darkMode: 'Dark Mode',
     },
     item: {
-        bookmark: '%{smart_count} Bookmark |||| %{smart_count} Bookmarks',
+        bookmark: '{count} Bookmark | {count} Bookmarks',
     },
     form:  {
         title: 'Title*',
@@ -42,7 +47,6 @@ const localeEn = {
         age: 'Please enter valid age.',
         required: 'This field is required.',
     },
-    emptyState: 'No %{phrase} found',
 }
 
-export default localeEn
+export default messages

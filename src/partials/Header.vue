@@ -32,7 +32,7 @@ header
         //Logo
         router-link(to='/' @click='wave')
             i.i-bookmark
-            span Bookmarks
+            span {{ $t('item.bookmark') }}
             //span Bookmarks
         router-link(to='/add' @click='wave')
             i.i-add
