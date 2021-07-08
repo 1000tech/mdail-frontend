@@ -1,38 +1,38 @@
 import { createI18n } from 'vue-i18n'
 import messages from '../locales/en'
 
+const locale = 'en'
+const loadedLocales = [locale]
+export const listLocales = ['en', 'ru']
+
 export const i18n = createI18n({
-    locale: 'en',
-    fallbackLocale: 'en',
+    locale,
+    fallbackLocale: locale,
     messages: {'en': messages},
 })
 
-const loadedLanguages = ['en']
-
-export const languagesAvailable = ['en', 'ru']
-
-function setI18nLanguage(lang) {
+export function setLocale(lang) {
     i18n.global.locale = lang
 }
 
-export function navigatorCloseLanguage() {
+export function getUserLocale() {
     const lang = navigator.language.slice(0, 2) || 'en'
-    if (languagesAvailable.includes(lang)) {
-        return loadLanguageAsync(lang)
+    if (listLocales.includes(lang)) {
+        return loadLocale(lang)
     }
     return 'en'
 }
 
-export function loadLanguageAsync (lang) {
+export function loadLocale(lang) {
     if (i18n.locale !== lang) {
-        if (!loadedLanguages.includes(lang)) {
+        if (!loadedLocales.includes(lang)) {
             return import(`../locales/${lang}`).then(msgs => {
                 i18n.global.setLocaleMessage(lang, msgs.default)
-                loadedLanguages.push(lang)
-                return setI18nLanguage(lang)
+                loadedLocales.push(lang)
+                return setLocale(lang)
             })
         }
-        return Promise.resolve(setI18nLanguage(lang))
+        return Promise.resolve(setLocale(lang))
     }
     return Promise.resolve(lang)
 }

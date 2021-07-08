@@ -1,35 +1,35 @@
 {
     "page": {
         "home": {
-            "title": "Bookmarks"
+            "title": "Закладки"
         },
         "add": {
-            "title": "Add Bookmark"
+            "title": "Добавить"
         },
         "edit": {
-            "title": "Edit Bookmark"
+            "title": "Редактировать"
         },
         "account": {
-            "title": "Account"
+            "title": "Профиль"
         }
     },
     "nav": {
-        "darkMode": "Dark Mode"
+        "darkMode": "Тёмный режим"
     },
     "item": {
-        "bookmark": "{count} Привет | {count} Приветы"
+        "bookmark": "{count} Закладка | {count} Закладки"
     },
     "form": {
-        "title": "Title*",
+        "title": "Заголовок*",
         "url": "URL*",
-        "tag": "Tags",
-        "desc": "Description"
+        "tag": "Теги",
+        "desc": "Описание"
     },
     "btn": {
-        "save": "Save",
-        "edit": "Edit",
-        "delete": "Delete",
-        "cancel": "Cancel"
+        "save": "Сохранить",
+        "edit": "Редактировать",
+        "delete": "Удалить",
+        "cancel": "Отмена"
     },
     "validation": {
         "email": "Please provide a valid email.",

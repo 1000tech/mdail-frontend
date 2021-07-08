@@ -32,18 +32,18 @@ header
         //Logo
         router-link(to='/' @click='wave')
             i.i-bookmark
-            span {{ $t('item.bookmark') }}
+            span {{ $t('page.home.title') }}
             //span Bookmarks
         router-link(to='/add' @click='wave')
             i.i-add
-            span Add Bookmark
+            span {{ $t('page.add.title') }}
     nav
         button(@click='wave')
             i.i-night
             span Dark Mode
         router-link(to='/account' @click='wave').user
             .user-avatar
-            span Account
+            span {{ $t('page.account.title') }}
 </template>
 
 <style lang='stylus'>
