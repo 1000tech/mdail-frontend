@@ -15,7 +15,7 @@ li
     button(@click="$emit('remove', item.id)")
         | X
     router-link(:to='`/edit/${item.id}`')
-        | Edit
+        | {{ $t('btn.edit') }}
 </template>
 
 <style lang='stylus'>

@@ -114,7 +114,7 @@ section
                 p Are you sure you want to delete this Bookmark?
             template(#button)
                 button(class='btn' @click='removeItem(deleteItemId)')
-                    | Delete
+                    | {{ $t('btn.delete') }}
 </template>
 
 <style lang='stylus'>

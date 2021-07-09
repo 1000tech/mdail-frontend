@@ -44,7 +44,7 @@ export default {
 
             div(class='D(f) Ai(c) Jc(fe)')
                 button(class='btn btn-empty' @click="$emit('close')")
-                    | Cancel
+                    | {{ $t('btn.cancel') }}
                 slot(name='button')
 </template>
 

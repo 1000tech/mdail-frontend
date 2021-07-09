@@ -60,7 +60,7 @@ export default {
     input.tag-input(
         class='H(28px) W(a) Flxg(1) My(4px)'
         type='text'
-        placeholder='Tags'
+        :placeholder='$t("form.tag")'
         v-model.trim='tag'
         @keydown.delete='edit(list.length - 1)'
         @keydown.space='submit'

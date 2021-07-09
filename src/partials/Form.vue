@@ -37,7 +37,7 @@ div
         div(class='My(15px)')
             input.field(
                 type='text'
-                placeholder='Title*'
+                :placeholder='$t("form.title")'
                 v-model.trim='item.title'
                 maxlength='255'
                 required=''
@@ -45,7 +45,7 @@ div
         div(class='My(15px)')
             input.field(
                 type='text'
-                placeholder='URL*'
+                :placeholder='$t("form.url")'
                 v-model.trim='item.url'
                 maxlength='255'
                 minlength='4'
@@ -56,10 +56,10 @@ div
         div(class='My(15px)')
             Textarea.field(
                 class='Mih(100px) Py(12px) Ov(h)'
-                placeholder='Description'
+                :placeholder='$t("form.desc")'
                 v-model.trim='item.desc'
             )
         div(class='D(f) Ai(c) Jc(fe)')
             button.btn(type='submit')
-                | Save
+                | {{ $t('btn.save') }}
 </template>
