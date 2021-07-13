@@ -79,7 +79,8 @@ module.exports = {
     plugins: [
         // new IconFontPlugin(),
         new webpack.DefinePlugin({
-            APP_API_URL: JSON.stringify(process.env.APP_API_URL),
+            API: JSON.stringify(process.env.API),
+            API_BOOKMARK: JSON.stringify(process.env.API_BOOKMARK),
             APP_PATH: JSON.stringify(process.env.APP_PATH)
         }),
         new VueLoaderPlugin(),

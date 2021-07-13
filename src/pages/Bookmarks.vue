@@ -26,7 +26,7 @@ export default {
         }
     },
     created() {
-        this.get(APP_API_URL)
+        this.get(API_BOOKMARK)
             .then(res => this.items = res.items)
             .catch(error => this.errored = true)
             .finally(() => this.loading = false)
@@ -48,8 +48,11 @@ export default {
         },
         // Remove Item
         removeItem(id) {
-            this.items = this.items.filter(item => item.id !== id)
-            this.isModalDeleteVisible = false
+            const uri = `${API_BOOKMARK}/${id}`
+            this.delete(uri).then(() => {
+                this.items = this.items.filter(item => item.id !== id)
+                this.isModalDeleteVisible = false
+            })
         },
         searchItems() {
             const name = this.name.toLowerCase()

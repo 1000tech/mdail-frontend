@@ -17,3 +17,9 @@ export function updateData(url = '', data = {}) {
         body: JSON.stringify(data)
     })
 }
+
+export function deleteData(url = '') {
+    return fetch(url, {
+        method: 'DELETE'
+    })
+}

@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         getItem() {
-            const uri = `${APP_API_URL}/${this.$route.params.id}`
+            const uri = `${API_BOOKMARK}/${this.$route.params.id}`
             this.get(uri).then(res => this.item = res.item)
         },
     }

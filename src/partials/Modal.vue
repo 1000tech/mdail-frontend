@@ -6,7 +6,7 @@ export default {
                 clientX: undefined,
                 clientY: undefined,
                 movementX: 0,
-                movementY: 0
+                movementY: 0,
             }
         }
     },
