@@ -1,6 +1,6 @@
 <script>
 import Title from '@/Title'
-import { listLocales, loadLocale } from '../js/i18n'
+import { listLocales, loadLocale } from '../services/i18n'
 
 export default {
     components: {

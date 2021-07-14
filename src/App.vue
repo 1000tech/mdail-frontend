@@ -1,6 +1,6 @@
 <script>
 import Header from '@/Header'
-import { getLocale } from './js/i18n'
+import { getLocale } from './services/i18n'
 
 export default {
     components: {

@@ -1,5 +1,5 @@
 <script>
-import { regExp } from '../js/utils'
+import { regExp } from '../services/utils'
 
 export default {
     props: {

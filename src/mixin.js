@@ -1,4 +1,4 @@
-import { postData, getData, updateData, deleteData } from './js/api'
+import { postData, getData, updateData, deleteData } from './services/api'
 
 const mixin = {
     methods: {
