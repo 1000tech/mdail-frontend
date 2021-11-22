@@ -1,9 +1,8 @@
-const
-    webpack = require('webpack'),
-    path = require('path'),
-    { VueLoaderPlugin } = require('vue-loader'),
-    // IconFontPlugin = require('icon-font-loader').Plugin,
-    HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const { VueLoaderPlugin } = require('vue-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require("copy-webpack-plugin")
 
 require('dotenv').config()
 
@@ -12,8 +11,9 @@ module.exports = {
     entry: path.resolve(__dirname, './src/main.js'),
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'script.[hash].js',
-        publicPath: process.env.APP_PATH
+        filename: 'script.[fullhash].js',
+        publicPath: process.env.APP_PATH,
+        clean: true
     },
     devServer: {
         historyApiFallback: true,
@@ -22,7 +22,8 @@ module.exports = {
         extensions: ['.vue', '.js', '.json'],
         alias: {
             '#': path.resolve(__dirname, './src/pages'),
-            '@': path.resolve(__dirname, './src/partials')
+            '@': path.resolve(__dirname, './src/partials'),
+            '%': path.resolve(__dirname, './src/services')
         }
     },
     module: {
@@ -48,7 +49,7 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    // 'icon-font-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -56,7 +57,6 @@ module.exports = {
                 use: [
                     'style-loader',
                     'css-loader',
-                    // 'icon-font-loader',
                     'postcss-loader',
                     {
                         loader: 'stylus-loader',
@@ -65,19 +65,10 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.(svg|ttf|woff|woff2)$/,
-                use: [
-                    {
-                        loader: 'file-loader?name=src/assets/fonts/[name].[ext]'
-                    }
-                ]
             }
         ]
     },
     plugins: [
-        // new IconFontPlugin(),
         new webpack.DefinePlugin({
             API: JSON.stringify(process.env.API),
             API_BOOKMARK: JSON.stringify(process.env.API_BOOKMARK),
@@ -85,7 +76,15 @@ module.exports = {
         }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: 'index.html',
+            publicPath: '/'
+        }),
+        new CopyPlugin({
+            patterns: [
+                { 
+                    from: 'src/assets/img', to: 'img' 
+                }
+            ]
         }),
         new webpack.LoaderOptionsPlugin({
             options: {

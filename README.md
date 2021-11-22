@@ -1,13 +1,13 @@
 # MDail frontend
 
 ## Prepare
-
-```bash
+```sh
 yarn
 ```
+Create in the root .env from .env.dist 
 
 ## Development run
 
-```bash
+```sh
 yarn dev
 ```
