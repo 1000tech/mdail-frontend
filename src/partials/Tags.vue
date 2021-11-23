@@ -1,5 +1,5 @@
 <script>
-import { regExp } from '../services/utils'
+import { regExp } from '%/utils'
 
 export default {
     props: {
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template lang='pug'>
-.field(class='D(f) Ai(c) Flw(w)')
+div(class='field flex items-center flex-wrap')
     button.tag(
         type='button'
         v-for='(item, i) in list'
@@ -57,8 +57,8 @@ export default {
     )
         i.tag-close
         span.tag-text {{ item }}
-    input.tag-input(
-        class='H(28px) W(a) Flxg(1) My(4px)'
+    input(
+        class='tag-input h-[28px] w-auto flex-grow my-[4px]'
         type='text'
         :placeholder='$t("form.tag")'
         v-model.trim='tag'

@@ -11,7 +11,7 @@ export default {
 
 <template lang='pug'>
 li
-    span {{item.title}}
+    span {{ item.title }}
     button(@click="$emit('remove', item.id)")
         | X
     router-link(:to='`/edit/${item.id}`')

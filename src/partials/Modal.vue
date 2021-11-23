@@ -42,7 +42,7 @@ export default {
         .modal-content(@mousedown='dragMouseDown')
             slot(name='text')
 
-            div(class='D(f) Ai(c) Jc(fe)')
+            div(class='flex items-center justify-end')
                 button(class='btn btn-empty' @click="$emit('close')")
                     | {{ $t('btn.cancel') }}
                 slot(name='button')

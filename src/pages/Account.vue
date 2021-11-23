@@ -1,6 +1,6 @@
 <script>
 import Title from '@/Title'
-import { listLocales, loadLocale } from '../services/i18n'
+import { listLocales, loadLocale } from '%/i18n'
 
 export default {
     components: {
@@ -23,7 +23,11 @@ export default {
 section
     Title
     p {{ $i18n.locale }}
-    button(v-for='(lang, index) in listLocales' :key='index' @click='changeLang(lang)')
+    button(
+        v-for='(lang, index) in listLocales' 
+        :key='index' 
+        @click='changeLang(lang)'
+    )
         | {{ lang }}
 </template>
 

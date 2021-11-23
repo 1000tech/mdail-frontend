@@ -6,20 +6,16 @@ export default {
         Logo
     },
     methods: {
-        // Wave effect
         wave(e) {
-            const
-                size = Math.max(e.target.offsetWidth, e.target.offsetHeight),
-                x = e.offsetX - size / 2,
-                y = e.offsetY - size / 2,
-                wave = document.createElement('span')
+            const size = Math.max(e.target.offsetWidth, e.target.offsetHeight)
+            const x = e.offsetX - size / 2
+            const y = e.offsetY - size / 2
+            const wave = document.createElement('span')
 
-            // Create a new wave
             wave.className = 'wave'
             wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
             e.target.appendChild(wave)
 
-            // Remove element after animation ends
             setTimeout(() => wave.remove(), 500)
         }
     }
@@ -33,7 +29,6 @@ header
         router-link(to='/' @click='wave')
             i.i-bookmark
             span {{ $t('page.home.title') }}
-            //span Bookmarks
         router-link(to='/add' @click='wave')
             i.i-add
             span {{ $t('page.add.title') }}

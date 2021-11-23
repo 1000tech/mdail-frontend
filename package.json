@@ -15,6 +15,8 @@
     "webpack-dev-server": "^4.5.0"
   },
   "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "@vue/compiler-sfc": "^3.2.22",
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
@@ -31,21 +33,30 @@
     "style-loader": "^3.0.0",
     "stylus": "^0.55.0",
     "stylus-loader": "^3.0.2",
+    "tailwindcss": "^2.2.19",
     "vue": "^3.2.22",
     "vue-i18n": "^9.1.9",
     "vue-loader": "^16.8.3",
     "vue-router": "^4.0.12",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.64.2",
-    "webpack-atomizer-loader": "^1.3.1",
     "webpack-cli": "^4.9.1"
   },
   "browserslist": [
     "last 2 versions",
     "> 1%, not dead"
   ],
+  "babel": {
+    "plugins": [
+      "remove-use-strict"
+    ],
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "postcss": {
     "plugins": {
+      "tailwindcss": {},
       "postcss-preset-env": {}
     }
   }

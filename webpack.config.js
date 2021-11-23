@@ -30,15 +30,7 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                use: [
-                    'vue-loader',
-                    {
-                        loader: 'webpack-atomizer-loader',
-                        options: {
-                            configPath: path.resolve(__dirname, './acssConf.js')
-                        }
-                    }
-                ]
+                use: 'vue-loader'
             },
             {
                 test: /\.pug$/,

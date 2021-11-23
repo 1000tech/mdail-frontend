@@ -4,12 +4,12 @@
 </template>
 
 <style lang='stylus'>
-    .error
-        background palevioletred
-        border-radius 7px
-        padding 14px 20px
-        margin 15px auto
-        max-width $xl
-        font-weight 500
-        color $white
+.error
+    background palevioletred
+    border-radius 7px
+    padding 14px 20px
+    margin 15px auto
+    max-width $xl
+    font-weight 500
+    color $white
 </style>

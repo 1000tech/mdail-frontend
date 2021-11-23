@@ -33,7 +33,7 @@ export default {
 <template lang='pug'>
 div
     form.card(@submit.prevent='postItem')
-        div(class='My(15px)')
+        div(class='my-[15px]')
             input.field(
                 type='text'
                 :placeholder='$t("form.title")'
@@ -41,7 +41,7 @@ div
                 maxlength='255'
                 required=''
             )
-        div(class='My(15px)')
+        div(class='my-[15px]')
             input.field(
                 type='text'
                 :placeholder='$t("form.url")'
@@ -50,15 +50,15 @@ div
                 minlength='4'
                 required=''
             )
-        div(class='My(15px)')
+        div(class='my-[15px]')
             Tags(:list='item.tags')
-        div(class='My(15px)')
-            Textarea.field(
-                class='Mih(100px) Py(12px) Ov(h)'
+        div(class='my-[15px]')
+            Textarea(
+                class='field min-h-[100px] py-[12px] overflow-hidden'
                 :placeholder='$t("form.desc")'
                 v-model.trim='item.desc'
             )
-        div(class='D(f) Ai(c) Jc(fe)')
+        div(class='flex items-center justify-end')
             button.btn(type='submit')
                 | {{ $t('btn.save') }}
 </template>
