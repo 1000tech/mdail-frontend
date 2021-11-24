@@ -4,7 +4,7 @@ const routes = [
     {
         name: 'Bookmarks',
         path: '/',
-        component: () => import('#/Bookmarks'),
+        component: () => import('#/bookmarks/Page'),
     },
     {
         name: 'Account',

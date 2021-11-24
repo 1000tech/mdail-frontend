@@ -25,7 +25,7 @@ export default {
 <template lang='pug'>
 header
     nav
-        //Logo
+        Logo
         router-link(to='/' @click='wave')
             i.i-bookmark
             span {{ $t('page.home.title') }}
@@ -43,23 +43,26 @@ header
 
 <style lang='stylus'>
 header
+    position sticky
+    bottom 0
     display flex
     justify-content space-between
-    position sticky
-    top 0
+    grid-area header
     padding 15px
+    color $white
+    > nav
+        display flex
+        align-items center
 
-    @media (max-width $lg)
-        > nav
-            display flex
-            align-items center
-
-    @media (min-width $lg)
+    @media (min-width $md)
         flex-direction column
+        > nav
+            display block
 
     a, button
         display flex
         align-items center
+        justify-content center
         color $white
         width 50px
         height 50px
@@ -71,21 +74,21 @@ header
         overflow hidden
         &:hover, &.active
             background $blue-hover
-        @media (max-width $lg)
-            justify-content center
-            span
-                display none
-        @media (min-width $lg)
+        span
+            display none
+        @media (min-width $md)
+            justify-content start
             width 100%
             border-radius 7px
             font 700 18px/40px 'R'
             padding 0 15px
             margin 12px 0
             span
+                display block
                 margin 0 0 0 10px
 
 .user
-    @media (min-width $lg)
+    @media (min-width $md)
         padding 0 6px
 
 .user-avatar

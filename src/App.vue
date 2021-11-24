@@ -23,18 +23,21 @@ main
 <style lang='stylus'>
 main
     display grid
-    grid-template-rows 70px 1fr
+    grid-template-rows 1fr 70px
+    grid-template-areas 'article' 'header'
     background $blue
     min-height 100%
-    @media (min-width $lg)
+    @media (min-width $md)
         grid-template-rows 1fr
         grid-template-columns 270px 1fr
+        grid-template-areas 'header article'
 
 article
+    grid-area article
     background $white
     padding 0 20px 20px
-    border-radius 10px 10px 0 0
-    @media (min-width $lg)
+    border-radius 0 0 10px 10px
+    @media (min-width $md)
         padding 0 60px 28px
         min-height 100%
         height 100vh

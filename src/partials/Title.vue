@@ -9,10 +9,8 @@
     position sticky
     top 0
     background $white
-    padding 20px 0 0
+    padding 25px 0 0
     margin 0 0 15px
-    @media (min-width $lg)
-        padding 40px 0 0
     &:after
         content ''
         position absolute

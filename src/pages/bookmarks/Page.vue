@@ -3,8 +3,9 @@ import Title from '@/Title'
 import Loading from '@/Loading'
 import Error from '@/Error'
 import Modal from '@/Modal'
-import BookmarkInput from '@/BookmarkInput'
-import BookmarkList from '@/BookmarkList'
+
+import BookmarkInput from './Input'
+import BookmarkList from './List'
 
 export default {
     components: {
@@ -21,14 +22,14 @@ export default {
             deleteItemId: null,
             newBookmark: '',
             loading: true,
-            errored: false,
+            error: false,
             items: [],
         }
     },
     created() {
         this.get(API_BOOKMARK)
             .then(res => this.items = res.items)
-            .catch(error => this.errored = true)
+            .catch(error => this.error = true)
             .finally(() => this.loading = false)
     },
     methods: {
@@ -102,7 +103,7 @@ section
             @remove='showDeleteModal(item.id)'
         )
 
-    Error(v-else-if='errored')
+    Error(v-else-if='error')
 
     p(v-else='')
         | Add your first Bookmark

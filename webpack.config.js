@@ -37,25 +37,12 @@ module.exports = {
                 loader: 'pug-plain-loader'
             },
             {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
-                ]
-            },
-            {
                 test: /\.styl(us)?$/,
                 use: [
                     'style-loader',
                     'css-loader',
                     'postcss-loader',
-                    {
-                        loader: 'stylus-loader',
-                        options: {
-                            indentedSyntax: true
-                        }
-                    }
+                    'stylus-loader'
                 ]
             }
         ]
