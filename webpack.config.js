@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin")
 
 require('dotenv').config()
@@ -59,6 +60,7 @@ module.exports = {
             template: 'index.html',
             publicPath: '/'
         }),
+        new SVGSpritemapPlugin('src/assets/svg'),
         new CopyPlugin({
             patterns: [
                 { 

@@ -16,7 +16,7 @@
 
 <style lang='stylus'>
 .logo 
-    animation neon 15s ease infinite
+    animation neon 12s ease infinite
 
 @keyframes neon
     0%
