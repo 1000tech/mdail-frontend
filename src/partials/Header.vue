@@ -23,56 +23,48 @@ export default {
 </script>
 
 <template lang='pug'>
-header
-    nav
-        Logo
-        router-link(to='/' @click='wave')
-            icon(name='bookmark')
-            span {{ $t('page.home.title') }}
-        router-link(to='/add' @click='wave')
-            icon(name='add')
-            span {{ $t('page.add.title') }}
-    nav
-        button(@click='wave')
-            icon(name='night')
-            span {{ $t('nav.darkMode') }}
-        router-link(to='/account' @click='wave').user
-            .user-avatar
-            span {{ $t('page.account.title') }}
+nav
+    Logo
+    router-link(to='/' @click='wave')
+        icon(name='bookmark')
+        span {{ $t('page.home.title') }}
+    router-link(to='/add' @click='wave')
+        icon(name='add')
+        span {{ $t('page.add.title') }}
+    button(@click='wave')
+        icon(name='night')
+        span {{ $t('nav.darkMode') }}
+    router-link(class='user mt-auto' to='/account' @click='wave')
+        .user-avatar
+        span {{ $t('page.account.title') }}
 </template>
 
 <style lang='stylus'>
-header
+nav
     position sticky
     bottom 0
     display flex
     justify-content space-between
     grid-area header
+    gap 8px
     padding 15px
     color $white
-    > nav
-        display flex
-        align-items center
-        gap 8px
-
     @media (min-width $md)
         flex-direction column
-        > nav
-            flex-direction column
-            align-items start
-            gap 12px
+        align-items start
+        gap 12px
 
     a, button
         display flex
         align-items center
         justify-content center
+        gap 10px
         color $white
         width 50px
         height 50px
         font-size 22px
         border-radius 50%
         letter-spacing 1px
-        user-select none
         position relative
         overflow hidden
         &:hover, &.active
@@ -87,7 +79,6 @@ header
             padding 0 15px
             span
                 display block
-                margin 0 0 0 10px
 
 .user
     @media (min-width $md)
