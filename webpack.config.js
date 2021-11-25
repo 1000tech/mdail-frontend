@@ -16,14 +16,15 @@ module.exports = {
         clean: true
     },
     devServer: {
-        historyApiFallback: true,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.vue', '.js', '.json'],
         alias: {
             '#': path.resolve(__dirname, './src/pages'),
             '@': path.resolve(__dirname, './src/partials'),
-            '%': path.resolve(__dirname, './src/services')
+            '%': path.resolve(__dirname, './src/services'),
+            '&': path.resolve(__dirname, './src/assets/icons')
         }
     },
     module: {
@@ -61,7 +62,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { 
-                    from: 'src/assets/img', to: 'img' 
+                    from: 'src/assets/img', to: 'img', 
+                    from: 'src/assets/icons', to: 'icons'
                 }
             ]
         }),

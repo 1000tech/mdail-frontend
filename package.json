@@ -7,7 +7,7 @@
   "license": "ISC",
   "private": true,
   "scripts": {
-    "dev": "webpack serve --open",
+    "dev": "webpack serve",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,6 +34,7 @@
     "style-loader": "^3.0.0",
     "stylus": "^0.55.0",
     "stylus-loader": "3.0.2",
+    "svg-spritemap-webpack-plugin": "^4.4.0",
     "tailwindcss": "^2.2.19",
     "vue": "^3.2.22",
     "vue-i18n": "^9.1.9",

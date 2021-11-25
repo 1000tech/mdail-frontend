@@ -16,7 +16,7 @@
 
 <style lang='stylus'>
 .logo 
-    animation neon 10s ease infinite
+    animation neon 15s ease infinite
 
 @keyframes neon
     0%
@@ -25,15 +25,15 @@
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 0))
     25%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 1))
-    64%
+    63%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 1))
     65%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 0))
-    66%
-        filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 0))
     67%
+        filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 0))
+    69%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 1))
-    99%
+    98%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 1))
     100%
         filter drop-shadow( 0px 0px 5px rgba(255, 255, 255, 0))

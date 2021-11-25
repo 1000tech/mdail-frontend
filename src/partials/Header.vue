@@ -1,9 +1,11 @@
 <script>
 import Logo from '@/Logo'
+import icon from '@/Icon'
 
 export default {
     components: {
-        Logo
+        Logo,
+        icon
     },
     methods: {
         wave(e) {
@@ -27,7 +29,7 @@ header
     nav
         Logo
         router-link(to='/' @click='wave')
-            i.i-bookmark
+            icon(name="add")
             span {{ $t('page.home.title') }}
         router-link(to='/add' @click='wave')
             i.i-add
