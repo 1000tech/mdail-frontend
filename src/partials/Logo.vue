@@ -1,5 +1,5 @@
 <template>
-<div class="hidden md:block pt-[15px] pb-[7px] px-[20px]">
+<div class="hidden md:block pt-[15px] pb-[7px] px-[16px]">
     <svg 
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 2580 593.2"

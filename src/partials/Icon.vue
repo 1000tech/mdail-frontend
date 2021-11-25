@@ -10,6 +10,6 @@ export default {
 
 <template>
     <svg fill="currentColor" width="1em" height="1em">
-        <use :xlink:href="`/icons/sprite.svg#${name}`"/>
+        <use :xlink:href="`sprite.svg#${name}`"/>
     </svg>
 </template>

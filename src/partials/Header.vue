@@ -1,11 +1,9 @@
 <script>
 import Logo from '@/Logo'
-import icon from '@/Icon'
 
 export default {
     components: {
-        Logo,
-        icon
+        Logo
     },
     methods: {
         wave(e) {
@@ -29,14 +27,14 @@ header
     nav
         Logo
         router-link(to='/' @click='wave')
-            icon(name="add")
+            icon(name='bookmark')
             span {{ $t('page.home.title') }}
         router-link(to='/add' @click='wave')
-            i.i-add
+            icon(name='add')
             span {{ $t('page.add.title') }}
     nav
         button(@click='wave')
-            i.i-night
+            icon(name='night')
             span {{ $t('nav.darkMode') }}
         router-link(to='/account' @click='wave').user
             .user-avatar
@@ -55,11 +53,14 @@ header
     > nav
         display flex
         align-items center
+        gap 8px
 
     @media (min-width $md)
         flex-direction column
         > nav
-            display block
+            flex-direction column
+            align-items start
+            gap 12px
 
     a, button
         display flex
@@ -84,7 +85,6 @@ header
             border-radius 7px
             font 700 18px/40px 'R'
             padding 0 15px
-            margin 12px 0
             span
                 display block
                 margin 0 0 0 10px

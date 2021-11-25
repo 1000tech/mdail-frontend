@@ -60,7 +60,18 @@ module.exports = {
             template: 'index.html',
             publicPath: '/'
         }),
-        new SVGSpritemapPlugin('src/assets/svg'),
+        new SVGSpritemapPlugin('src/assets/icons/**/*.svg', {
+            output: {
+                filename: 'sprite.svg',
+                svgo: true,
+            },
+            sprite: {
+                prefix: false,
+                generate: {
+                    title: false,
+                }
+            },
+        }),
         new CopyPlugin({
             patterns: [
                 { 
