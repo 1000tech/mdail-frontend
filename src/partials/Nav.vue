@@ -31,9 +31,6 @@ nav
     router-link(to='/add' @click='wave')
         icon(name='add')
         span {{ $t('page.add.title') }}
-    button(@click='wave')
-        icon(name='night')
-        span {{ $t('nav.darkMode') }}
     router-link(class='user mt-auto' to='/account' @click='wave')
         .user-avatar
         span {{ $t('page.account.title') }}
@@ -45,7 +42,7 @@ nav
     bottom 0
     display flex
     justify-content space-between
-    grid-area header
+    grid-area nav
     gap 8px
     padding 15px
     color $white

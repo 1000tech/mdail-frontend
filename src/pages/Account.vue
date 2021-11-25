@@ -29,6 +29,11 @@ section
         @click='changeLang(lang)'
     )
         | {{ lang }}
+
+    div
+        button
+            icon(name='night')
+            span {{ $t('nav.darkMode') }}
 </template>
 
 <style lang='stylus'>

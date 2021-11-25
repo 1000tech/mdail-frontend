@@ -2,27 +2,27 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 const routes = [
     {
-        name: 'Bookmarks',
+        name: 'page.home.title',
         path: '/',
         component: () => import('#/bookmarks/Page'),
     },
     {
-        name: 'Account',
-        path: '/account',
-        component: () => import('#/Account'),
-    },
-    {
-        name: 'Add Bookmark',
+        name: 'page.add.title',
         path: '/add',
         component: () => import('#/Add'),
     },
     {
-        name: 'Edit Bookmark',
+        name: 'page.edit.title',
         path: '/edit/:id',
         component: () => import('#/Edit'),
     },
     {
-        name: '404 – Not Found',
+        name: 'page.account.title',
+        path: '/account',
+        component: () => import('#/Account'),
+    },
+    {
+        name: 'page.404.title',
         path: '/:catchAll(.*)',
         component: () => import('#/404'),
     },

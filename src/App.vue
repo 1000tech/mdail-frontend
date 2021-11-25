@@ -1,10 +1,10 @@
 <script>
-import Header from '@/Header'
+import Nav from '@/Nav'
 import { getLocale } from '%/i18n'
 
 export default {
     components: {
-        Header
+        Nav
     },
     created() {
         getLocale()
@@ -14,7 +14,7 @@ export default {
 
 <template lang='pug'>
 main
-    Header
+    Nav
     article
         router-view(v-slot='{ Component }')
             component(:is='Component')
@@ -24,13 +24,13 @@ main
 main
     display grid
     grid-template-rows 1fr 70px
-    grid-template-areas 'article' 'header'
+    grid-template-areas 'article' 'nav'
     background $blue
     min-height 100%
     @media (min-width $md)
         grid-template-rows 1fr
         grid-template-columns 270px 1fr
-        grid-template-areas 'header article'
+        grid-template-areas 'nav article'
 
 article
     grid-area article

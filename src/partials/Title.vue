@@ -1,6 +1,7 @@
 <template lang='pug'>
 .title
-    h1 {{ $route.name }}
+    h1(v-if='$route.name') 
+        | {{ $t($route.name) }}
     slot
 </template>
 

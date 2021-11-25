@@ -3,6 +3,9 @@ import messages from '../locales/en'
 
 const locale = 'en'
 const loadedLocales = [locale]
+const key = 'mdail_lang'
+const getLang = localStorage.getItem(key)
+
 export const listLocales = ['en', 'ru']
 
 export const i18n = createI18n({
@@ -13,10 +16,18 @@ export const i18n = createI18n({
 
 export function setLocale(lang) {
     i18n.global.locale = lang
+    localStorage.setItem(key, lang)
 }
 
 export function getLocale() {
-    const lang = navigator.language.slice(0, 2) || 'en'
+    let lang
+
+    if (getLang) {
+        lang = getLang
+    } else {
+        lang = navigator.language.slice(0, 2) || 'en'
+    }
+
     if (listLocales.includes(lang)) {
         return loadLocale(lang)
     }
