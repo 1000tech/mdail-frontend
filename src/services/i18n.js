@@ -13,17 +13,17 @@ export const i18n = createI18n({
     messages: { en }
 })
 
-export function setLocale(lang) {
-    i18n.global.locale = lang
-    localStorage.setItem(key, lang)
-}
-
 export function getLocale() {
-    const lang = getLang ? getLang : navigator.language.slice(0, 2) || 'en'
+    const lang = getLang ? getLang : navigator.language.slice(0, 2) || locale
 
     if (listLocales.includes(lang)) {
         return loadLocale(lang)
     }
+}
+
+export function setLocale(lang) {
+    i18n.global.locale = lang
+    localStorage.setItem(key, lang)
 }
 
 export async function loadLocale(lang) {
