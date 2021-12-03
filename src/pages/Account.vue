@@ -29,7 +29,6 @@ section
         @click='changeLang(lang)'
     )
         | {{ lang }}
-
     div
         button
             icon(name='night')
