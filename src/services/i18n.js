@@ -4,7 +4,7 @@ import en from '../locales/en'
 const locale = 'en'
 const loadedLocales = [locale]
 const key = 'mdail_lang'
-const getLang = localStorage.getItem(key)
+const storageLang = localStorage.getItem(key)
 
 export const listLocales = ['en', 'ru']
 
@@ -14,7 +14,7 @@ export const i18n = createI18n({
 })
 
 export function getLocale() {
-    const lang = getLang ? getLang : navigator.language.slice(0, 2) || locale
+    const lang = storageLang ? storageLang : navigator.language.slice(0, 2) || locale
 
     if (listLocales.includes(lang)) {
         return loadLocale(lang)
