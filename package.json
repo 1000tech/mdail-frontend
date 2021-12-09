@@ -33,13 +33,13 @@
     "stylus": "^0.55.0",
     "stylus-loader": "3.0.2",
     "svg-spritemap-webpack-plugin": "^4.4.0",
-    "tailwindcss": "^2.2.19",
-    "vue": "^3.2.23",
+    "tailwindcss": "^3.0.0",
+    "vue": "^3.2.24",
     "vue-i18n": "^9.1.9",
     "vue-loader": "^16.8.3",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2",
-    "webpack": "^5.64.4",
+    "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   },
   "browserslist": [

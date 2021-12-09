@@ -51,6 +51,8 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
+            __VUE_OPTIONS_API__: true,
+            __VUE_PROD_DEVTOOLS__: false,
             API: JSON.stringify(process.env.API),
             API_BOOKMARK: JSON.stringify(process.env.API_BOOKMARK),
             APP_PATH: JSON.stringify(process.env.APP_PATH)
