@@ -9,6 +9,7 @@ const storageLang = localStorage.getItem(key)
 export const listLocales = ['en', 'ru']
 
 export const i18n = createI18n({
+    locale,
     fallbackLocale: locale,
     messages: { en }
 })
