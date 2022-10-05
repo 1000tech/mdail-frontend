@@ -60,7 +60,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
-            publicPath: '/'
+            publicPath: process.env.APP_PATH,
         }),
         new SVGSpritemapPlugin('src/assets/icons/**/*.svg', {
             output: {

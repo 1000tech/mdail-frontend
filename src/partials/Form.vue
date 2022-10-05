@@ -16,13 +16,11 @@ export default {
     methods: {
         postItem() {
             let uri
-
             if (this.$route.params.id) { // is existing item
                 uri = `${API_BOOKMARK}/${this.$route.params.id}`
                 return this.put(uri, this.item)
                     .then(() => this.$router.push({ path: '/' }))
             }
-
             this.post(API_BOOKMARK, this.item)
                 .then(() => this.$router.push({ path: '/' }))
         }
